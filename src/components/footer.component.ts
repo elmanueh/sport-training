@@ -4,61 +4,62 @@ import { Component } from '@angular/core';
   selector: 'footer',
   standalone: true,
   template: `
-  <div class="footer">
-    <div class="footer-up">
-      <div class="footer-up-left">
-        <div class="logo-text">
-          <img src="assets/logo.png" alt="Logo" class="logo" />
-          <p><strong>Sport Training</strong></p>
+    <div class="footer">
+      <div class="footer-up">
+        <div class="footer-up-left">
+          <div class="logo-text">
+            <img src="assets/logo.png" alt="Logo" class="logo" />
+            <p><strong>Sport Training</strong></p>
+          </div>
+
+          <div class="redes">
+            <button class="icon-button">
+              <img src="assets/whatsapp.png" alt="Whatsapp" class="logo" />
+            </button>
+            <button class="icon-button">
+              <img src="assets/facebook.png" alt="Facebook" class="logo" />
+            </button>
+            <button class="icon-button">
+              <img src="assets/youtube.png" alt="Youtube" class="logo" />
+            </button>
+            <button class="icon-button">
+              <img src="assets/instagram.png" alt="Instagram" class="logo" />
+            </button>
+            <button class="icon-button">
+              <img src="assets/tiktok.png" alt="Tiktok" class="logo" />
+            </button>
+          </div>
         </div>
 
-        <div class="redes">
-          <button class="icon-button">
-            <img src="assets/whatsapp.png" alt="Whatsapp" class="logo"/>
-          </button>
-          <button class="icon-button">
-            <img src="assets/facebook.png" alt="Facebook" class="logo"/>
-          </button>
-          <button class="icon-button">
-            <img src="assets/youtube.png" alt="Youtube" class="logo"/>
-          </button>
-          <button class="icon-button">
-            <img src="assets/instagram.png" alt="Instagram" class="logo"/>
-          </button>
-          <button class="icon-button">
-            <img src="assets/tiktok.png" alt="Tiktok" class="logo"/>
-          </button>
+        <div class="footer-up-right">
+          <div class="contacto">
+            <h1><strong>SportTraining.com</strong></h1>
+            <p>Envía tus comentarios</p>
+            <p>Publicidad</p>
+            <p>Contacto</p>
+            <p>Términos & Condiciones</p>
+            <p>Políticas de Privacidad</p>
+            <p>Políticas de Cookies</p>
+          </div>
+          <div class="lugares">
+            <h1><strong>Lugares</strong></h1>
+            <p>Murcia</p>
+            <p>Almería</p>
+            <p>Albacete</p>
+            <p>Málaga</p>
+            <p>Alicante</p>
+          </div>
         </div>
       </div>
-    
-      <div class="footer-up-right">
-        <div class="contacto">
-          <h1><strong>SportTraining.com</strong></h1>
-          <p>Envía tus comentarios</p>
-          <p>Publicidad</p>
-          <p>Contacto</p>
-          <p>Términos & Condiciones</p>
-          <p>Políticas de Privacidad</p>
-          <p>Políticas de Cookies</p>
-        </div>
-        <div class="lugares">
-          <h1><strong>Lugares</strong></h1>
-          <p>Murcia</p>
-          <p>Almería</p>
-          <p>Albacete</p>
-          <p>Málaga</p>
-          <p>Alicante</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="footer-bottom">
-      <!-- Zona de copyright -->
-      <p class="copyrigth">©</p>
-      <p>2024 Sport Training – Todos los derechos reservados.</p>
+      <div class="footer-bottom">
+        <!-- Zona de copyright -->
+        <p class="copyrigth">©</p>
+        <p>2024 Sport Training - Todos los derechos reservados.</p>
+      </div>
     </div>
-  </div>
-  `, styles: `
+  `,
+  styles: `
   .footer {
     display: flex;
     flex-direction: column;
@@ -126,7 +127,6 @@ import { Component } from '@angular/core';
   .copyrigth {
     font-size: 30px;
   }
-`
+`,
 })
-export class FooterComponent {
-}
+export class FooterComponent {}

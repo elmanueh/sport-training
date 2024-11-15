@@ -4,6 +4,22 @@ import { Component } from '@angular/core';
   selector: 'home-page',
   standalone: true,
   imports: [],
-  templateUrl: './home.component.html',
+  template: `
+    <div class="flex flex-column align-items-center mt-8">
+      <div class="flex flex-column align-items-center text-yellow-400">
+        <img class="w-3rem" src="assets/logo.png" alt="logo" />
+        <p>Sport Training</p>
+      </div>
+      <div class="text-gray-300">
+        <p class="text-2xl font-bold">
+          HAZ QUE CADA ENTRENAMIENTO SUME A TUS OBJETIVOS
+        </p>
+        <p class="text-lg">
+          Tu mejor versión comienza aquí. Donde encontrarás todos los servicios
+          necesarios para alcanzar los objetivos que te propongas.
+        </p>
+      </div>
+    </div>
+  `,
 })
 export class HomePage {}
