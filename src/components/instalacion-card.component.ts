@@ -1,10 +1,10 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { InstalacionDeportiva } from '../types/centro-deportivo';
 
 @Component({
-  selector: 'instalaciones-actividades-card',
+  selector: 'instalacion-card',
   standalone: true,
   imports: [ButtonModule, RouterModule],
   template: `
@@ -33,6 +33,6 @@ import { InstalacionDeportiva } from '../types/centro-deportivo';
     </div>
   `,
 })
-export class InstalacionesActividadesCardComponent {
+export class InstalacionCardComponent {
   @Input() instalacion: InstalacionDeportiva | undefined;
 }

@@ -9,7 +9,7 @@ import { centrosDeportivos } from '../consts/centro-deportivo';
   imports: [CentroDeportivoCardComponent, PaginatorModule],
   template: `
     <div class="flex flex-column">
-      <p class="tittle_page flex justify-content-center">CENTROS DEPORTIVOS</p>
+      <p class="tittle-page flex justify-content-center">Centros Deportivos</p>
 
       <div class="flex flex-column gap-5">
         @for(cd of centrosDeportivos; track cd.id) {

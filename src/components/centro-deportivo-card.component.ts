@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CentroDeportivo } from '../types/centro-deportivo';
 import { RouterModule } from '@angular/router';
@@ -8,29 +8,26 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [ButtonModule, RouterModule],
   template: `
-    <div class="flex bg-yellow-800 w-8 border-round-xl">
-      <div class="p-3">
-        <img
-          [src]="centroDeportivo?.imagen"
-          alt="centro-deportivo-1"
-          width="200vw"
-          height="100vh"
-          class="border-round-xl"
-        />
-      </div>
-      <div class="p-3 text-gray-900 w-full">
-        <div class="font-bold text-xl">{{ centroDeportivo?.titulo }}</div>
-        <div class="pt-2">{{ centroDeportivo?.descripcion }}</div>
+    <section class="flex card w-7 h-10rem border-round-xl p-3 shadow-6">
+      <img
+        class="border-round-xl"
+        [src]="centroDeportivo?.imagen"
+        alt="Imagen del centro deportivo {{ centroDeportivo?.titulo }}"
+        width="300rem"
+      />
+      <section class="flex flex-column pl-3 w-full m-0">
+        <p class="font-bold text-2xl m-0">{{ centroDeportivo?.titulo }}</p>
+        <p class="pt-2 m-0 flex h-full">{{ centroDeportivo?.descripcion }}</p>
         <div class="flex gap-3 justify-content-end">
-          <a routerLink="/centros-deportivos/instalaciones" class="p-button">
-            Instalaciones
+          <a routerLink="{{ centroDeportivo?.id }}/instalaciones">
+            <p-button label="Instalaciones" raised></p-button>
           </a>
-          <a routerLink="/centros-deportivos/actividades" class="p-button">
-            Actividades
+          <a routerLink="{{ centroDeportivo?.id }}/actividades">
+            <p-button label="Actividades" raised></p-button>
           </a>
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   `,
 })
 export class CentroDeportivoCardComponent {
