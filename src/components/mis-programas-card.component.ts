@@ -8,22 +8,26 @@ import { ProgramaEntrenamiento } from '../types/programa-entrenamiento';
   template: `
     <div class="flex justify-content-center">
       <div class="p-3 bg-yellow-800 w-22rem h-26rem border-round-xl">
-        <div class="flex gap-5 pb-5">
-          <div>{{ programaEntrenamiento?.titulo }}</div>
-          <a class="flex justify-content-end w-full"> BOTON </a>
+        <div class="flex gap-2 h-4rem pb-3">
+          <div class="font-bold text-xl flex w-full">
+            {{ programaEntrenamiento?.titulo }}
+          </div>
+          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs">Ver</a>
         </div>
-        <div>Estado: {{ programaEntrenamiento?.estado }}</div>
-        <div>
+        <div class="font-italic text-base pb-1">
+          {{ programaEntrenamiento?.estado }}
+        </div>
+        <div class="pb-3">
           <img
             class="border-round-xl flex w-full"
             [src]="programaEntrenamiento?.imagen"
-            height="300vh"
+            height="250vh"
           />
         </div>
         <div class="flex justify-content-between">
-          <a>Cambiar Fecha</a>
-          <a>Pagar</a>
-          <a>Cancelar</a>
+          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs">Cambiar Fecha</a>
+          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs">Pagar</a>
+          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs">Cancelar</a>
         </div>
       </div>
       <div></div>
