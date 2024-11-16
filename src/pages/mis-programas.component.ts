@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MisProgramasCardComponent } from '../components/mis-programas-card.component';
+import { MisProgramasCardComponent } from '../components/cards/mis-programas-card.component';
 
 @Component({
   selector: 'app-mis-programas',

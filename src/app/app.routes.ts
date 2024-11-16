@@ -4,6 +4,7 @@ import { CentrosDeportivosPage } from '../pages/centros-deportivos.component';
 import { MisProgramasComponent } from '../pages/mis-programas.component';
 import { InstalacionesPage } from '../pages/instalaciones.component';
 import { LoginPage } from '../pages/login.component';
+import { ActividadesPage } from '../pages/actividades.component';
 
 export const routes: Routes = [
   {
@@ -20,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: 'centros-deportivos/:id/actividades',
-    component: InstalacionesPage,
+    component: ActividadesPage,
   },
   {
     path: 'mis-programas',

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ProgramaEntrenamiento } from '../types/programa-entrenamiento';
+import { Component } from '@angular/core';
+import { ProgramaEntrenamiento } from '../../types/programa-entrenamiento';
 
 @Component({
   selector: 'mis-programas-card',
