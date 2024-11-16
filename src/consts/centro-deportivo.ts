@@ -226,7 +226,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
           'Área equipada para tiro con arco con varios niveles de dificultad.',
         categoria: 'Tiro con Arco',
         imagen: 'campo_tiro_arco.jpg',
-        valoracion: 4.6,
+        valoracion: 4,
       },
       {
         id: 12,
@@ -235,7 +235,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
           'Circuito cerrado para ciclismo de montaña y de carretera.',
         categoria: 'Ciclismo',
         imagen: 'pista_ciclismo.jpg',
-        valoracion: 4.7,
+        valoracion: 4,
       },
       {
         id: 13,
@@ -243,7 +243,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
         descripcion: 'Recorrido de 10 km diseñado para corredores de montaña.',
         categoria: 'Running',
         imagen: 'sendero_trail.jpg',
-        valoracion: 4.9,
+        valoracion: 4,
       },
       {
         id: 14,
@@ -252,7 +252,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
           'Espacio al aire libre con barras y estructuras para ejercicios de calistenia.',
         categoria: 'Fitness',
         imagen: 'zona_calistenia.jpg',
-        valoracion: 4.8,
+        valoracion: 4,
       },
       {
         id: 15,
@@ -260,7 +260,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
         descripcion: 'Cancha de arena con medidas reglamentarias.',
         categoria: 'Voleibol',
         imagen: 'cancha_voley.jpg',
-        valoracion: 4.5,
+        valoracion: 4,
       },
     ],
     actividades: [
@@ -270,7 +270,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
         descripcion: 'Aprende técnicas básicas y avanzadas con expertos.',
         categoria: 'Tiro con Arco',
         imagen: 'clases_tiro_arco.jpg',
-        valoracion: 4.7,
+        valoracion: 4,
       },
       {
         id: 12,
@@ -278,7 +278,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
         descripcion: 'Paseos en bicicleta guiados por rutas escénicas.',
         categoria: 'Ciclismo',
         imagen: 'ciclismo_grupo.jpg',
-        valoracion: 4.8,
+        valoracion: 4,
       },
       {
         id: 13,
@@ -286,7 +286,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
         descripcion: 'Mejora tu fuerza con ejercicios de peso corporal.',
         categoria: 'Fitness',
         imagen: 'entrenamiento_calistenia.jpg',
-        valoracion: 4.6,
+        valoracion: 4,
       },
       {
         id: 14,
