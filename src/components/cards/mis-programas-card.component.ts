@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProgramaEntrenamiento } from '../types/programa-entrenamiento';
+import { ProgramaEntrenamiento } from '../../types/programa-entrenamiento';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 

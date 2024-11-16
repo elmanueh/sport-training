@@ -1,8 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { InstalacionCardComponent } from '../components/instalacion-card.component';
+import { InstalacionCardComponent } from '../components/cards/instalacion-card.component';
 import { centrosDeportivos } from '../consts/centro-deportivo';
-import { InstalacionDeportiva } from '../types/centro-deportivo';
+import {
+  CentroDeportivo,
+  InstalacionDeportiva,
+} from '../types/centro-deportivo';
 
 @Component({
   selector: 'instalaciones-page',
@@ -11,7 +14,10 @@ import { InstalacionDeportiva } from '../types/centro-deportivo';
   template: `
     <div class="flex flex-column">
       <p class="tittle-page flex justify-content-center">
-        FUTURAS INSTALACIONES ACTIVIDADES
+        Instalaciones Deportivas
+      </p>
+      <p class="flex justify-content-center text-3xl">
+        {{ centroDeportivo?.titulo }}
       </p>
 
       <div class="flex flex-column gap-5">
@@ -31,9 +37,10 @@ import { InstalacionDeportiva } from '../types/centro-deportivo';
 })
 export class InstalacionesPage {
   instalaciones: InstalacionDeportiva[] = [];
+  centroDeportivo: CentroDeportivo | undefined;
 
   @Input() set id(id: any) {
-    this.instalaciones =
-      centrosDeportivos.find((cd) => cd.id == id)?.instalaciones || [];
+    this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);
+    this.instalaciones = this.centroDeportivo?.instalaciones || [];
   }
 }

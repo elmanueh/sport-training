@@ -1,0 +1,43 @@
+import { Component, Input } from '@angular/core';
+import { PaginatorModule } from 'primeng/paginator';
+import { InstalacionCardComponent } from '../components/cards/instalacion-card.component';
+import { centrosDeportivos } from '../consts/centro-deportivo';
+import { ActividadDeportiva, CentroDeportivo } from '../types/centro-deportivo';
+
+@Component({
+  selector: 'actividades-page',
+  standalone: true,
+  imports: [PaginatorModule, InstalacionCardComponent],
+  template: `
+    <div class="flex flex-column">
+      <p class="tittle-page flex justify-content-center">
+        Actividades Deportivas
+      </p>
+      <p class="flex justify-content-center text-3xl">
+        {{ centroDeportivo?.titulo }}
+      </p>
+
+      <div class="flex flex-column gap-5">
+        @for(actividad of actividades; track actividad.id) {
+        <instalacion-card
+          class="flex justify-content-center"
+          [instalacion]="actividad"
+        />
+        }
+      </div>
+
+      <div class="card flex justify-content-center mt-6">
+        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
+      </div>
+    </div>
+  `,
+})
+export class ActividadesPage {
+  actividades: ActividadDeportiva[] = [];
+  centroDeportivo: CentroDeportivo | undefined;
+
+  @Input() set id(id: any) {
+    this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);
+    this.actividades = this.centroDeportivo?.actividades || [];
+  }
+}
