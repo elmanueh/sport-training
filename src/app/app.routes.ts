@@ -3,6 +3,7 @@ import { HomePage } from '../pages/home.component';
 import { CentrosDeportivosPage } from '../pages/centros-deportivos.component';
 import { MisProgramasComponent } from '../pages/mis-programas.component';
 import { InstalacionesPage } from '../pages/instalaciones.component';
+import { LoginPage } from '../pages/login.component';
 
 export const routes: Routes = [
   {
@@ -24,5 +25,9 @@ export const routes: Routes = [
   {
     path: 'mis-programas',
     component: MisProgramasComponent,
+  },
+  {
+    path: 'login',
+    component: LoginPage,
   },
 ];

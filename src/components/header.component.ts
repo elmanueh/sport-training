@@ -51,7 +51,7 @@ import { RippleModule } from 'primeng/ripple';
           />
           <div class="flex align-items-center gap-5">
             <a>Únete a Nosotros</a>
-            <a>Iniciar Sesión</a>
+            <a [routerLink]="['/login']">Iniciar Sesión</a>
             <a>Ayuda</a>
             <p class="text-green-200">Idioma</p>
           </div>
