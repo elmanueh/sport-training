@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MisProgramasCardComponent } from '../components/mis-programas-card.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { programaEntrenamiento } from '../consts/programa-entrenamiento';
 
 @Component({
   selector: 'app-mis-programas',
@@ -9,16 +10,22 @@ import { PaginatorModule } from 'primeng/paginator';
   template: `
     <section class="flex flex-column justify-content-center">
       <p class="tittle-page flex justify-content-center">Mis Programas</p>
+
       <div class="flex justify-content-center gap-4 mb-5">
-        <mis-programas-card />
-        <mis-programas-card />
-        <mis-programas-card />
-        <mis-programas-card />
+        @for(pe of programasEntrenamiento; track pe.id) {
+        <mis-programas-card
+          class="flex justify-content-center"
+          [programaEntrenamiento]="pe"
+        />
+        }
       </div>
+
       <div class="card flex justify-content-center mt-6">
         <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
       </div>
     </section>
   `,
 })
-export class MisProgramasComponent {}
+export class MisProgramasComponent {
+  programasEntrenamiento = programaEntrenamiento;
+}
