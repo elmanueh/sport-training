@@ -4,7 +4,7 @@ import { CentrosDeportivosPage } from '../pages/centros-deportivos.component';
 import { MisProgramasComponent } from '../pages/mis-programas.component';
 import { InstalacionesPage } from '../pages/instalaciones.component';
 import { LoginPage } from '../pages/login.component';
-import { ReservasMiProgramaPage } from '../pages/reservas-mi-programa';
+import { ReservasMiProgramaPage } from '../pages/reservas-mi-programa.component';
 import { ActividadesPage } from '../pages/actividades.component';
 
 export const routes: Routes = [

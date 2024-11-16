@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
-import { ReservaCardComponent } from '../components/reserva-mi-programa';
+import { ReservaCardComponent } from '../components/cards/reserva-mi-programa-card';
 import { Reserva } from '../types/programa-entrenamiento';
 import { ButtonModule } from 'primeng/button';
 
@@ -18,14 +18,20 @@ import { ButtonModule } from 'primeng/button';
           <label class="flex justify-content-center pt-4 text-2xl">
             {{ programaTitulo }}
           </label>
-          <label class="flex justify-content-center text-yellow-400 pt-4 text-xl">PRECIO: 50€</label>
+          <label
+            class="flex justify-content-center text-yellow-400 pt-4 text-xl"
+            >PRECIO: 50€</label
+          >
         </div>
         <p class="tittle-page flex justify-content-center">
           VISUALIZA LA PLANIFICACIÓN
         </p>
         <div class="flex pr-7 justify-content-center">
           <div class="w-20">
-            <label class="font-bold flex justify-content-center text-yellow-400 pt-4 pb-2">ENTRENADOR</label>
+            <label
+              class="font-bold flex justify-content-center text-yellow-400 pt-4 pb-2"
+              >ENTRENADOR</label
+            >
             <div class="flex justify-content-center pb-2">
               <img
                 [src]="entrenador"
@@ -63,7 +69,8 @@ export class ReservasMiProgramaPage {
   @Input() set id(id: any) {
     this.reservas =
       programaEntrenamiento.find((cd) => cd.id == id)?.reservas || [];
-      this.programaTitulo = programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
+    this.programaTitulo =
+      programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
   }
   entrenador: string =
     'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1';
