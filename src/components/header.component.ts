@@ -71,6 +71,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'Mis Programas',
+        route: '/mis-programas',
       },
       {
         label: 'Mis Actividades',

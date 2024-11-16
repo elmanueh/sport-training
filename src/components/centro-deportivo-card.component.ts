@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { CentroDeportivo } from '../interfaces/centro-deportivo';
+import { CentroDeportivo } from '../types/centro-deportivo';
 
 @Component({
   selector: 'centros-deportivos-card',
