@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
             class="p-button flex justify-content-center w-5rem h-2rem text-xs"
             routerLink="{{ programaEntrenamiento?.id }}/reservas"
           >
-            <p-button label="Ver"></p-button>
+            Ver
           </a>
         </div>
         <div class="font-italic text-base pb-1">
@@ -35,9 +35,12 @@ import { RouterModule } from '@angular/router';
           <a class="p-button flex justify-content-center w-5rem h-2rem text-xs"
             >Cambiar Fecha</a
           >
-          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs"
-            >Pagar</a
+          <a
+            class="p-button flex justify-content-center w-5rem h-2rem text-xs"
+            routerLink="{{ programaEntrenamiento?.id }}/valorar"
           >
+            Pagar (Valorar)
+          </a>
           <a class="p-button flex justify-content-center w-5rem h-2rem text-xs"
             >Cancelar</a
           >

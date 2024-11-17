@@ -4,7 +4,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
 
 @Component({
-  selector: 'app-mis-programas',
+  selector: 'mis-programas-page',
   standalone: true,
   imports: [MisProgramasCardComponent, PaginatorModule],
   template: `
@@ -26,6 +26,6 @@ import { programaEntrenamiento } from '../consts/programa-entrenamiento';
     </section>
   `,
 })
-export class MisProgramasComponent {
+export class MisProgramasPage {
   programasEntrenamiento = programaEntrenamiento;
 }

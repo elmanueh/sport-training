@@ -16,7 +16,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         fecha: 'Fecha: 2024-11-20',
         hora: 'Hora: 10:00 AM',
         monitor: 'Carlos Rodríguez',
-        categoria: 'clase',
+        categoria: 'actividad',
         imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
         valoracion: 5,
       },
@@ -28,7 +28,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         fecha: 'Fecha: 2024-11-21',
         hora: 'Hora: 4:00 PM',
         monitor: 'Ana Gómez',
-        categoria: 'clase',
+        categoria: 'actividad',
         imagen:
           'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
         valoracion: 4,
@@ -55,6 +55,81 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         categoria: 'instalación',
         imagen:
           'https://www.limpiezaslm2.com/wp-content/uploads/2017/04/c%C3%B3mo-hacer-una-limpieza-de-gimnasios-a-fondo-1200x900.jpg',
+        valoracion: 4,
+      },
+      {
+        id: 5,
+        titulo: 'Clase de Tenis - Técnica de Saque',
+        descripcion:
+          'Clase enfocada en mejorar la técnica y potencia del saque.',
+        fecha: 'Fecha: 2024-11-20',
+        hora: 'Hora: 10:00 AM',
+        monitor: 'Carlos Rodríguez',
+        categoria: 'actividad',
+        imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
+        valoracion: 5,
+      },
+      {
+        id: 6,
+        titulo: 'Clase de Tenis - Entrenamiento General',
+        descripcion:
+          'Entrenamiento para perfeccionar habilidades básicas y movimientos en la pista. ',
+        fecha: 'Fecha: 2024-11-21',
+        hora: 'Hora: 4:00 PM',
+        monitor: 'Ana Gómez',
+        categoria: 'actividad',
+        imagen:
+          'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
+        valoracion: 4,
+      },
+      {
+        id: 7,
+        titulo: 'Clase de Tenis - Técnica de Saque',
+        descripcion:
+          'Clase enfocada en mejorar la técnica y potencia del saque.',
+        fecha: 'Fecha: 2024-11-20',
+        hora: 'Hora: 10:00 AM',
+        monitor: 'Carlos Rodríguez',
+        categoria: 'actividad',
+        imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
+        valoracion: 5,
+      },
+      {
+        id: 8,
+        titulo: 'Clase de Tenis - Entrenamiento General',
+        descripcion:
+          'Entrenamiento para perfeccionar habilidades básicas y movimientos en la pista. ',
+        fecha: 'Fecha: 2024-11-21',
+        hora: 'Hora: 4:00 PM',
+        monitor: 'Ana Gómez',
+        categoria: 'actividad',
+        imagen:
+          'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
+        valoracion: 4,
+      },
+      {
+        id: 9,
+        titulo: 'Clase de Tenis - Técnica de Saque',
+        descripcion:
+          'Clase enfocada en mejorar la técnica y potencia del saque.',
+        fecha: 'Fecha: 2024-11-20',
+        hora: 'Hora: 10:00 AM',
+        monitor: 'Carlos Rodríguez',
+        categoria: 'actividad',
+        imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
+        valoracion: 5,
+      },
+      {
+        id: 10,
+        titulo: 'Clase de Tenis - Entrenamiento General',
+        descripcion:
+          'Entrenamiento para perfeccionar habilidades básicas y movimientos en la pista. ',
+        fecha: 'Fecha: 2024-11-21',
+        hora: 'Hora: 4:00 PM',
+        monitor: 'Ana Gómez',
+        categoria: 'actividad',
+        imagen:
+          'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
         valoracion: 4,
       },
     ],

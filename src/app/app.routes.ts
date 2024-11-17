@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomePage } from '../pages/home.component';
 import { CentrosDeportivosPage } from '../pages/centros-deportivos.component';
-import { MisProgramasComponent } from '../pages/mis-programas.component';
+import { MisProgramasPage } from '../pages/mis-programas.component';
 import { InstalacionesPage } from '../pages/instalaciones.component';
 import { LoginPage } from '../pages/login.component';
 import { ReservasMiProgramaPage } from '../pages/reservas-mi-programa.component';
 import { ActividadesPage } from '../pages/actividades.component';
+import { ValorarPage } from '../pages/valorar.component';
 
 export const routes: Routes = [
   {
@@ -26,11 +27,15 @@ export const routes: Routes = [
   },
   {
     path: 'mis-programas',
-    component: MisProgramasComponent,
+    component: MisProgramasPage,
   },
   {
     path: 'mis-programas/:id/reservas',
     component: ReservasMiProgramaPage,
+  },
+  {
+    path: 'mis-programas/:id/valorar',
+    component: ValorarPage,
   },
   {
     path: 'login',
