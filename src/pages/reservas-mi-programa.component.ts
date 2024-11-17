@@ -46,7 +46,7 @@ import { ButtonModule } from 'primeng/button';
         </div>
       </div>
       <div class="flex justify-content-center">
-        <div class="w-8">
+        <div class="w-7">
           <p class="font-italic font-bold">Proximas Reservas</p>
         </div>
       </div>

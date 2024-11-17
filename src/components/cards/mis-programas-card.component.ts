@@ -9,9 +9,9 @@ import { RouterModule } from '@angular/router';
   imports: [ButtonModule, RouterModule],
   template: `
     <div class="flex justify-content-center">
-      <div class="p-3 bg-yellow-800 w-22rem h-26rem border-round-xl">
+      <div class="p-3 card w-22rem h-26rem border-round-xl shadow-6">
         <div class="flex gap-2 h-4rem pb-3">
-          <div class="font-bold text-xl flex w-full">
+          <div class="font-bold text-2xl flex w-full">
             {{ programaEntrenamiento?.titulo }}
           </div>
           <a
@@ -43,7 +43,6 @@ import { RouterModule } from '@angular/router';
           >
         </div>
       </div>
-      <div></div>
     </div>
   `,
 })

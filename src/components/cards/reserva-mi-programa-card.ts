@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { Reserva } from '../../types/programa-entrenamiento';
@@ -8,35 +7,39 @@ import { Reserva } from '../../types/programa-entrenamiento';
 @Component({
   selector: 'reserva-card',
   standalone: true,
-  imports: [ButtonModule, RouterModule, FormsModule, RatingModule],
+  imports: [ButtonModule, FormsModule, RatingModule],
   template: `
-    <div class="flex bg-yellow-800 w-8 border-round-xl">
-      <div class="p-3">
-        <img
-          [src]="reserva?.imagen"
-          alt="centro-deportivo-1"
-          width="200vw"
-          height="130vh"
-          class="border-round-xl"
-        />
-      </div>
-      <div class="p-3 text-gray-900 w-full">
-        <div class="font-bold text-xl">{{ reserva?.titulo }}</div>
-        <div class="pt-1">Descipción: {{ reserva?.descripcion }}</div>
-        <div class="pt-1">Fecha: {{ reserva?.fecha }}</div>
-        <div class="pt-1">Hora: {{ reserva?.hora }}</div>
-        @if (reserva?.monitor) {
-        <div class="pt-1">Monitor: {{ reserva?.monitor }}</div>
-        }
-        <div class="flex gap-3 justify-content-end">
-          <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false" />
+    <section class="flex card w-7 h-11rem border-round-xl p-3 shadow-6">
+      <img
+        [src]="reserva?.imagen"
+        alt="centro-deportivo-1"
+        width="300rem"
+        class="border-round-xl"
+      />
+      <section class="flex flex-column pl-3 w-full m-0">
+        <p class="font-bold text-2xl m-0 w-full">{{ reserva?.titulo }}</p>
+        <div class="flex h-full flex-column">
+          <p class="m-0 flex ">Descipción: {{ reserva?.descripcion }}</p>
+          <p class="m-0 flex ">Fecha: {{ reserva?.fecha }}</p>
+          <p class="m-0 flex ">Hora: {{ reserva?.hora }}</p>
+          @if (reserva?.monitor) {
+          <p class="m-0 flex">
+            Monitor: {{ reserva?.monitor }}
+          </p>
+          }
         </div>
-      </div>
-    </div>
+        <div class="flex gap-3 justify-content-end">
+          <p-rating [(ngModel)]="stars" [readonly]="true" [cancel]="false" />
+        </div>
+      </section>
+    </section>
   `,
 })
 export class ReservaCardComponent {
   @Input() reserva: Reserva | undefined;
 
-  value: number = 5;
+  stars: number = 0;
+  ngOnInit(): void {
+    this.stars = this.reserva?.valoracion || 0;
+  }
 }
