@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
-import { ReservaCardComponent } from '../components/cards/reserva-mi-programa-card';
+import { ReservaCardComponent } from '../components/cards/reserva-mi-programa-card.component';
 import { Reserva } from '../types/programa-entrenamiento';
 import { ButtonModule } from 'primeng/button';
 
