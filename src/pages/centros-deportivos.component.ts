@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { CentroDeportivoCardComponent } from '../components/cards/centro-deportivo-card.component';
 import { centrosDeportivos } from '../consts/centro-deportivo';
+import { LargeCardComponent } from '../components/cards/large-card.component';
+import { TypeCard } from '../types/card';
 
 @Component({
   selector: 'centros-deportivos-page',
   standalone: true,
-  imports: [CentroDeportivoCardComponent, PaginatorModule],
+  imports: [PaginatorModule, LargeCardComponent],
   template: `
     <div class="flex flex-column">
       <p class="tittle-page flex justify-content-center">Centros Deportivos</p>
 
       <div class="flex flex-column gap-5">
         @for(cd of centrosDeportivos; track cd.id) {
-        <centros-deportivos-card
+        <large-card
+          [typeCard]="typeCard"
+          [data]="cd"
           class="flex justify-content-center"
-          [centroDeportivo]="cd"
         />
         }
       </div>
@@ -28,4 +30,5 @@ import { centrosDeportivos } from '../consts/centro-deportivo';
 })
 export class CentrosDeportivosPage {
   centrosDeportivos = centrosDeportivos;
+  typeCard = TypeCard.MultipleButton;
 }

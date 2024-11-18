@@ -1,16 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { InstalacionCardComponent } from '../components/cards/instalacion-card.component';
 import { centrosDeportivos } from '../consts/centro-deportivo';
 import {
   CentroDeportivo,
   InstalacionDeportiva,
 } from '../types/centro-deportivo';
+import { LargeCardComponent } from '../components/cards/large-card.component';
+import { TypeCard } from '../types/card';
 
 @Component({
   selector: 'instalaciones-page',
   standalone: true,
-  imports: [PaginatorModule, InstalacionCardComponent],
+  imports: [PaginatorModule, LargeCardComponent],
   template: `
     <div class="flex flex-column">
       <p class="tittle-page flex justify-content-center">
@@ -22,9 +23,10 @@ import {
 
       <div class="flex flex-column gap-5">
         @for(i of instalaciones; track i.id) {
-        <instalacion-card
+        <large-card
+          [typeCard]="typeCard"
+          [data]="i"
           class="flex justify-content-center"
-          [instalacion]="i"
         />
         }
       </div>
@@ -38,6 +40,7 @@ import {
 export class InstalacionesPage {
   instalaciones: InstalacionDeportiva[] = [];
   centroDeportivo: CentroDeportivo | undefined;
+  typeCard = TypeCard.StarsButton;
 
   @Input() set id(id: any) {
     this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);
