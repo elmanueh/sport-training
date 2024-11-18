@@ -96,7 +96,9 @@ import { CarouselModule } from 'primeng/carousel';
 
       <div class="flex justify-content-center">
         <div class="w-8 flex justify-content-end">
-          <a class="p-button flex w-5rem h-2rem text-xs justify-content-center"> Enviar </a>
+          <a class="p-button flex w-5rem h-2rem text-xs justify-content-center">
+            Enviar
+          </a>
         </div>
       </div>
 

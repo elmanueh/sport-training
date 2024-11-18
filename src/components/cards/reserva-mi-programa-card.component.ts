@@ -23,9 +23,7 @@ import { Reserva } from '../../types/programa-entrenamiento';
           <p class="m-0 flex ">Fecha: {{ reserva?.fecha }}</p>
           <p class="m-0 flex ">Hora: {{ reserva?.hora }}</p>
           @if (reserva?.monitor) {
-          <p class="m-0 flex">
-            Monitor: {{ reserva?.monitor }}
-          </p>
+          <p class="m-0 flex">Monitor: {{ reserva?.monitor }}</p>
           }
         </div>
         <div class="flex gap-3 justify-content-end">
