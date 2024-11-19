@@ -8,10 +8,22 @@ import { CheckboxModule } from 'primeng/checkbox';
   standalone: true,
   imports: [PasswordModule, FormsModule, CheckboxModule],
   template: `
-    <div class="flex justify-content-center">
-      <div
-        class="p-6 bg-gray-700 w-50rem border-round-xl text-gray-900 justify-content-center"
-      >
+    <section class="flex flex-column w-full">
+      <div class="w-full">
+        <img
+          class="flex justify-content-center"
+          src="assets/logo.png"
+          width="100"
+        />
+        <p class="flex justify-content-center text-2xl font-bold">
+          TU CUENTA PARA TODO LO QUE SE REFIERE A
+        </p>
+        <p class="flex justify-content-center text-2xl font-bold color-yellow">
+          SPORT TRAINING
+        </p>
+      </div>
+      <div></div>
+      <div class="pt-6 text-gray-200 justify-content-center">
         <div class="flex justify-content-center pb-2">
           <img class="w-3rem" src="assets/logo.png" />
         </div>
@@ -27,6 +39,8 @@ import { CheckboxModule } from 'primeng/checkbox';
             SPORT TRAINING
           </div>
         </div>
+
+        <!-- -->
         <div class="card flex justify-content-center pb-3">
           <div class="flex flex-column">
             <label>Nombre Usuario</label>
@@ -79,7 +93,12 @@ import { CheckboxModule } from 'primeng/checkbox';
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  `,
+  styles: `
+
+  
+  
   `,
 })
 export class LoginComponent {
