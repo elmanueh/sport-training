@@ -9,7 +9,7 @@ import { programaEntrenamiento } from '../consts/programa-entrenamiento';
   imports: [MisProgramasCardComponent, PaginatorModule],
   template: `
     <section class="flex flex-column justify-content-center">
-      <p class="tittle-page flex justify-content-center">Mis Programas</p>
+      <p class="tittle-page flex justify-content-center pb-5">Mis Programas</p>
 
       <div class="flex justify-content-center gap-4 mb-5">
         @for(pe of programasEntrenamiento; track pe.id) {
@@ -18,6 +18,14 @@ import { programaEntrenamiento } from '../consts/programa-entrenamiento';
           [programaEntrenamiento]="pe"
         />
         }
+      </div>
+
+      <div class="flex justify-content-center gap-4 mb-5">
+        <mis-programas-card
+          [data]="'vacio'"
+          class="flex justify-content-center"
+          [programaEntrenamiento]="programasEntrenamiento[0]"
+        />
       </div>
 
       <div class="card flex justify-content-center mt-6">

@@ -37,6 +37,12 @@ import { Reserva } from '../../types/programa-entrenamiento';
       </div>
     </div>
   `,
+  styles: `
+    .card {
+      background-color: #cfb073;
+      color: #111;
+    }
+  `,
 })
 export class ValorarCardComponent {
   @Input() reserva: Reserva | undefined;

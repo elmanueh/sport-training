@@ -4,16 +4,21 @@ import { programaEntrenamiento } from '../consts/programa-entrenamiento';
 import { ValorarCardComponent } from '../components/cards/valorar-card.component';
 import { Reserva } from '../types/programa-entrenamiento';
 import { CarouselModule } from 'primeng/carousel';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'valorar-page',
   standalone: true,
-  imports: [ValorarCardComponent, PaginatorModule, CarouselModule],
+  imports: [ValorarCardComponent, PaginatorModule, CarouselModule, RouterModule],
   template: `
     <section class="flex flex-column justify-content-center">
       <div class="flex justify-content-between">
         <div class="flex pl-7 pt-4 flex-column">
-          <a class="p-button flex justify-content-center">Volver atras</a>
+          <a
+            class="p-button flex justify-content-center"
+            routerLink="/mis-programas"
+            >Volver atras</a
+          >
 
           <label class="flex justify-content-center pt-4 text-2xl">
             {{ programaTitulo }}
@@ -32,70 +37,64 @@ import { CarouselModule } from 'primeng/carousel';
               <img
                 [src]="entrenador"
                 alt="centro-deportivo-1"
-                class="border-round-xl w-6rem"
+                class="border-round-xl w-4rem"
               />
             </div>
-            <label class="font-bold flex justify-content-center text-white">
+            <label
+              class="font-bold flex justify-content-center text-white text-s"
+            >
               Pablo Peris Solano
             </label>
           </div>
         </div>
       </div>
 
-      <section class="flex flex-row justify-content-center">
-        <div class="pr-8">
-          <div class="flex justify-content-center">
-            <div class="w-22rem">
-              <p class="font-italic font-bold">Actividades</p>
-            </div>
-          </div>
-          <div class="flex justify-content-center">
-            <p-carousel
-              [value]="actividades"
-              [numVisible]="1"
-              [numScroll]="1"
-              [circular]="false"
-              [responsiveOptions]="responsiveOptions"
-              class="w-29rem"
-            >
-              <ng-template pTemplate="item" let-actividad>
-                <valorar-card
-                  class="flex justify-content-center"
-                  [reserva]="actividad"
-                />
-              </ng-template>
-            </p-carousel>
+      <section class="flex flex-column pb-5">
+        <div class="flex justify-content-center pb-3">
+          <div class="w-9">
+            <p class="font-italic text-xl font-bold">Actividades</p>
           </div>
         </div>
+        <div class="flex justify-content-center">
+          <p-carousel
+            [value]="actividades"
+            [numVisible]="3"
+            [numScroll]="3"
+            [circular]="false"
+            [responsiveOptions]="responsiveOptions"
+            class="w-9"
+          >
+            <ng-template pTemplate="item" let-actividad>
+              <valorar-card [reserva]="actividad" />
+            </ng-template>
+          </p-carousel>
+        </div>
+      </section>
 
-        <div>
-          <div class="flex justify-content-center">
-            <div class="w-22rem">
-              <p class="font-italic font-bold">instalaciones</p>
-            </div>
+      <section class="flex flex-column pb-5">
+        <div class="flex justify-content-center pb-3">
+          <div class="w-9">
+            <p class="font-italic text-xl font-bold">Instalaciones</p>
           </div>
-          <div class="flex justify-content-center">
-            <p-carousel
-              [value]="instalaciones"
-              [numVisible]="1"
-              [numScroll]="1"
-              [circular]="false"
-              [responsiveOptions]="responsiveOptions"
-              class="w-29rem"
-            >
-              <ng-template pTemplate="item" let-instalacion>
-                <valorar-card
-                  class="flex justify-content-center"
-                  [reserva]="instalacion"
-                />
-              </ng-template>
-            </p-carousel>
-          </div>
+        </div>
+        <div class="flex justify-content-center">
+          <p-carousel
+            [value]="instalaciones"
+            [numVisible]="3"
+            [numScroll]="3"
+            [circular]="false"
+            [responsiveOptions]="responsiveOptions"
+            class="w-9"
+          >
+            <ng-template pTemplate="item" let-instalacion>
+              <valorar-card [reserva]="instalacion" />
+            </ng-template>
+          </p-carousel>
         </div>
       </section>
 
       <div class="flex justify-content-center">
-        <div class="w-8 flex justify-content-end">
+        <div class="w-9 flex justify-content-end">
           <a class="p-button flex w-5rem h-2rem text-xs justify-content-center">
             Enviar
           </a>

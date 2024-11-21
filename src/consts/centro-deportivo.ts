@@ -45,7 +45,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
           'Área equipada con máquinas de última generación para musculación y cardio.',
         categoria: 'Fitness',
         imagen:
-          'https://etenonfitness.com/wp-content/uploads/2021/12/gimnasio.jpeg',
+          'https://www.fitnesstech.es/cdn/shop/articles/Equipamiento_gimnasio_accesorios_para_las_diferentes_salas-531093_1200x849.jpg',
         valoracion: 3,
       },
       {

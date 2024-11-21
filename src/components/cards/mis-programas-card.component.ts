@@ -48,7 +48,14 @@ import { RouterModule } from '@angular/router';
       </div>
     </div>
   `,
+  styles: `
+    .card {
+      background-color: #cfb073;
+      color: #111;
+    }
+  `,
 })
 export class MisProgramasCardComponent {
   @Input() programaEntrenamiento: ProgramaEntrenamiento | undefined;
+  @Input() data!: String | undefined;
 }

@@ -35,26 +35,27 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
       },
       {
         id: 3,
-        titulo: 'Uso de Pista de Tenis',
+        titulo: 'Clase de Tenis - Técnica de Saque',
         descripcion:
-          'Acceso a una pista de tenis completamente equipada por 2 horas. ',
-        fecha: 'Fecha: 2024-11-22',
-        hora: 'Hora: 5:00 PM',
-        categoria: 'instalación',
-        imagen:
-          'https://niberma.es/wp-content/uploads/2022/05/trazado-de-campo-niberma.jpg',
+          'Clase enfocada en mejorar la técnica y potencia del saque.',
+        fecha: 'Fecha: 2024-11-20',
+        hora: 'Hora: 10:00 AM',
+        monitor: 'Carlos Rodríguez',
+        categoria: 'actividad',
+        imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
         valoracion: 5,
       },
       {
         id: 4,
-        titulo: 'Acceso al Gimnasio',
+        titulo: 'Clase de Tenis - Entrenamiento General',
         descripcion:
-          'Uso del gimnasio con máquinas y pesas para mejorar tu fuerza física.',
-        fecha: 'Fecha: 2024-11-22',
-        hora: 'Hora: 6:00 PM',
-        categoria: 'instalación',
+          'Entrenamiento para perfeccionar habilidades básicas y movimientos en la pista. ',
+        fecha: 'Fecha: 2024-11-21',
+        hora: 'Hora: 4:00 PM',
+        monitor: 'Ana Gómez',
+        categoria: 'actividad',
         imagen:
-          'https://www.limpiezaslm2.com/wp-content/uploads/2017/04/c%C3%B3mo-hacer-una-limpieza-de-gimnasios-a-fondo-1200x900.jpg',
+          'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
         valoracion: 4,
       },
       {
@@ -109,27 +110,74 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
       },
       {
         id: 9,
-        titulo: 'Clase de Tenis - Técnica de Saque',
+        titulo: 'Pista de Tenis',
         descripcion:
-          'Clase enfocada en mejorar la técnica y potencia del saque.',
-        fecha: 'Fecha: 2024-11-20',
-        hora: 'Hora: 10:00 AM',
-        monitor: 'Carlos Rodríguez',
-        categoria: 'actividad',
-        imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
+          'Acceso a una pista de tenis completamente equipada por 2 horas. ',
+        fecha: 'Fecha: 2024-11-22',
+        hora: 'Hora: 5:00 PM',
+        categoria: 'instalación',
+        imagen:
+          'https://niberma.es/wp-content/uploads/2022/05/trazado-de-campo-niberma.jpg',
         valoracion: 5,
       },
       {
         id: 10,
-        titulo: 'Clase de Tenis - Entrenamiento General',
+        titulo: 'Gimnasio',
         descripcion:
-          'Entrenamiento para perfeccionar habilidades básicas y movimientos en la pista. ',
-        fecha: 'Fecha: 2024-11-21',
-        hora: 'Hora: 4:00 PM',
-        monitor: 'Ana Gómez',
-        categoria: 'actividad',
+          'Uso del gimnasio con máquinas y pesas para mejorar tu fuerza física.',
+        fecha: 'Fecha: 2024-11-22',
+        hora: 'Hora: 6:00 PM',
+        categoria: 'instalación',
         imagen:
-          'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
+          'https://www.fitnesstech.es/cdn/shop/articles/Equipamiento_gimnasio_accesorios_para_las_diferentes_salas-531093_1200x849.jpg',
+        valoracion: 4,
+      },
+      {
+        id: 11,
+        titulo: 'Pista de Tenis',
+        descripcion:
+          'Acceso a una pista de tenis completamente equipada por 2 horas. ',
+        fecha: 'Fecha: 2024-11-22',
+        hora: 'Hora: 5:00 PM',
+        categoria: 'instalación',
+        imagen:
+          'https://niberma.es/wp-content/uploads/2022/05/trazado-de-campo-niberma.jpg',
+        valoracion: 5,
+      },
+      {
+        id: 12,
+        titulo: 'Gimnasio',
+        descripcion:
+          'Uso del gimnasio con máquinas y pesas para mejorar tu fuerza física.',
+        fecha: 'Fecha: 2024-11-22',
+        hora: 'Hora: 6:00 PM',
+        categoria: 'instalación',
+        imagen:
+          'https://www.fitnesstech.es/cdn/shop/articles/Equipamiento_gimnasio_accesorios_para_las_diferentes_salas-531093_1200x849.jpg',
+        valoracion: 4,
+      },
+      {
+        id: 13,
+        titulo: 'Pista de Tenis',
+        descripcion:
+          'Acceso a una pista de tenis completamente equipada por 2 horas. ',
+        fecha: 'Fecha: 2024-11-22',
+        hora: 'Hora: 5:00 PM',
+        categoria: 'instalación',
+        imagen:
+          'https://niberma.es/wp-content/uploads/2022/05/trazado-de-campo-niberma.jpg',
+        valoracion: 5,
+      },
+      {
+        id: 14,
+        titulo: 'Gimnasio',
+        descripcion:
+          'Uso del gimnasio con máquinas y pesas para mejorar tu fuerza física.',
+        fecha: 'Fecha: 2024-11-22',
+        hora: 'Hora: 6:00 PM',
+        categoria: 'instalación',
+        imagen:
+          'https://www.fitnesstech.es/cdn/shop/articles/Equipamiento_gimnasio_accesorios_para_las_diferentes_salas-531093_1200x849.jpg',
         valoracion: 4,
       },
     ],
