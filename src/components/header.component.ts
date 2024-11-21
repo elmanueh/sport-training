@@ -6,6 +6,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'header-component',
@@ -17,43 +18,39 @@ import { RippleModule } from 'primeng/ripple';
     InputTextModule,
     RippleModule,
     CommonModule,
+    ButtonModule,
   ],
   template: `
     <p-menubar [model]="items">
       <ng-template pTemplate="start">
         <a class="flex align-items-center p-3 mr-8" [routerLink]="['/']">
           <img class="w-3rem" src="assets/logo.png" alt="logo" />
-          <p class="pl-3 text-yellow-400 font-bold text-xl">Sport Training</p>
+          <p class="pl-3 font-bold text-xl text-color">Sport Training</p>
         </a>
       </ng-template>
       <ng-template pTemplate="item" let-item let-root="root">
         <a
           [routerLink]="item.route"
           pRipple
-          class="flex align-items-center p-menuitem-link m-2 text-yellow-400"
+          class="flex align-items-center p-menuitem-link text-color"
         >
-          <span class="ml-2">{{ item.label }}</span>
+          <span class="font-bold">{{ item.label }}</span>
         </a>
       </ng-template>
       <ng-template pTemplate="end">
-        <div
-          class="flex align-items-center gap-3 text-yellow-400 font-bold mr-4"
-        >
+        <div class="flex align-items-center gap-3 text-color font-bold mr-4">
           <input
             type="text"
             pInputText
             placeholder="Buscar"
             class="w-8rem sm:w-15rem"
           />
-          <p-avatar
-            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-            shape="circle"
-          />
+          <p-avatar image="https://github.com/elmanueh.png" shape="circle" />
           <div class="flex align-items-center gap-5">
-            <a>Únete a Nosotros</a>
+            <a [routerLink]="['/']"> Únete a Nosotros </a>
             <a [routerLink]="['/login']">Iniciar Sesión</a>
-            <a>Ayuda</a>
-            <p class="text-green-200">Idioma</p>
+            <a [routerLink]="['/']"> Ayuda </a>
+            <a [routerLink]="['/']"> Idioma </a>
           </div>
         </div>
       </ng-template>
@@ -75,6 +72,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'Mis Actividades',
+        route: '/mis-actividades',
       },
     ];
   }
