@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ProgramaEntrenamiento } from '../../types/programa-entrenamiento';
-import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { ProgramaEntrenamiento } from '@/types/programa-entrenamiento';
 
 @Component({
   selector: 'mis-programas-card',
@@ -41,9 +41,7 @@ import { RouterModule } from '@angular/router';
           >
             Pagar (Valorar)
           </a>
-          <a class="p-button flex justify-content-center text-xs"
-            >Cancelar</a
-          >
+          <a class="p-button flex justify-content-center text-xs">Cancelar</a>
         </div>
       </div>
     </div>

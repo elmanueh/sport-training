@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { PaginatorModule } from 'primeng/paginator';
-import { programaEntrenamiento } from '../consts/programa-entrenamiento';
-import { Reserva } from '../types/programa-entrenamiento';
-import { ButtonModule } from 'primeng/button';
-import { TypeCard } from '../types/card';
-import { LargeCardComponent } from '../components/cards/large-card.component';
 import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { PaginatorModule } from 'primeng/paginator';
+import { Reserva } from '@/types/programa-entrenamiento';
+import { TypeCard } from '@/types/card';
+import { programaEntrenamiento } from '../consts/programa-entrenamiento';
+import { LargeCardComponent } from '@/components/cards/large-card.component';
 
 @Component({
   selector: 'reservas-page',

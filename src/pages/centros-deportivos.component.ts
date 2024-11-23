@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { centrosDeportivos } from '../consts/centro-deportivo';
-import { LargeCardComponent } from '../components/cards/large-card.component';
-import { TypeCard } from '../types/card';
+import { TypeCard } from '@/types/card';
+import { centrosDeportivos } from '@/consts/centro-deportivo';
+import { LargeCardComponent } from '@/components/cards/large-card.component';
 
 @Component({
   selector: 'centros-deportivos-page',

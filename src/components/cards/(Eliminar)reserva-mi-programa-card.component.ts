@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
-import { Reserva } from '../../types/programa-entrenamiento';
+import { Reserva } from '@/types/programa-entrenamiento';
 
 @Component({
   selector: 'reserva-card',

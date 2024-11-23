@@ -1,15 +1,20 @@
 import { Component, Input } from '@angular/core';
-import { PaginatorModule } from 'primeng/paginator';
-import { programaEntrenamiento } from '../consts/programa-entrenamiento';
-import { ValorarCardComponent } from '../components/cards/valorar-card.component';
-import { Reserva } from '../types/programa-entrenamiento';
-import { CarouselModule } from 'primeng/carousel';
 import { RouterModule } from '@angular/router';
+import { PaginatorModule } from 'primeng/paginator';
+import { CarouselModule } from 'primeng/carousel';
+import { Reserva } from '@/types/programa-entrenamiento';
+import { programaEntrenamiento } from '@/consts/programa-entrenamiento';
+import { ValorarCardComponent } from '@/components/cards/valorar-card.component';
 
 @Component({
   selector: 'valorar-page',
   standalone: true,
-  imports: [ValorarCardComponent, PaginatorModule, CarouselModule, RouterModule],
+  imports: [
+    ValorarCardComponent,
+    PaginatorModule,
+    CarouselModule,
+    RouterModule,
+  ],
   template: `
     <section class="flex flex-column justify-content-center">
       <div class="flex justify-content-between">

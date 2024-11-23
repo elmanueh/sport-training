@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
-import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
-import { Reserva } from '../../types/programa-entrenamiento';
+import { ButtonModule } from 'primeng/button';
+import { RatingModule } from 'primeng/rating';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { Reserva } from '@/types/programa-entrenamiento';
 
 @Component({
   selector: 'valorar-card',

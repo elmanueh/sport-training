@@ -1,5 +1,8 @@
-import { ActividadDeportiva, InstalacionDeportiva } from './centro-deportivo';
-import { Reserva } from './programa-entrenamiento';
+import { Reserva } from '@/types/programa-entrenamiento';
+import {
+  ActividadDeportiva,
+  InstalacionDeportiva,
+} from '@/types/centro-deportivo';
 
 export enum TypeCard {
   MultipleButton,
@@ -8,7 +11,10 @@ export enum TypeCard {
   ToggleButton,
 }
 
-export interface LargeCard extends ActividadDeportiva, InstalacionDeportiva, Reserva {
+export interface LargeCard
+  extends ActividadDeportiva,
+    InstalacionDeportiva,
+    Reserva {
   tipo: TypeCard;
   page: string;
 }

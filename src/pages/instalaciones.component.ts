@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { centrosDeportivos } from '../consts/centro-deportivo';
+import { centrosDeportivos } from '@/consts/centro-deportivo';
 import {
   CentroDeportivo,
   InstalacionDeportiva,

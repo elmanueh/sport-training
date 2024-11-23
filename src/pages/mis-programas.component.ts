@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MisProgramasCardComponent } from '../components/cards/mis-programas-card.component';
 import { PaginatorModule } from 'primeng/paginator';
-import { programaEntrenamiento } from '../consts/programa-entrenamiento';
+import { programaEntrenamiento } from '@/consts/programa-entrenamiento';
+import { MisProgramasCardComponent } from '@/components/cards/mis-programas-card.component';
 
 @Component({
   selector: 'mis-programas-page',

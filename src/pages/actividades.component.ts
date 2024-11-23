@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { centrosDeportivos } from '../consts/centro-deportivo';
-import { ActividadDeportiva, CentroDeportivo } from '../types/centro-deportivo';
-import { LargeCardComponent } from '../components/cards/large-card.component';
-import { TypeCard } from '../types/card';
+import { centrosDeportivos } from '@/consts/centro-deportivo';
+import { TypeCard } from '@/types/card';
+import { ActividadDeportiva, CentroDeportivo } from '@/types/centro-deportivo';
+import { LargeCardComponent } from '@/components/cards/large-card.component';
 
 @Component({
   selector: 'actividades-page',

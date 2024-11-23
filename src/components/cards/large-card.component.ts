@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
-import { LargeCard, TypeCard } from '../../types/card';
+import { ButtonModule } from 'primeng/button';
+import { LargeCard, TypeCard } from '@/types/card';
 import {
   ActividadDeportiva,
   CentroDeportivo,
   InstalacionDeportiva,
-} from '../../types/centro-deportivo';
-import { Reserva } from '../../types/programa-entrenamiento';
+} from '@/types/centro-deportivo';
+import { Reserva } from '@/types/programa-entrenamiento';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 

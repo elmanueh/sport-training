@@ -1,4 +1,4 @@
-import { CentroDeportivo } from '../types/centro-deportivo';
+import { CentroDeportivo } from '@/types/centro-deportivo';
 
 export const centrosDeportivos: CentroDeportivo[] = [
   {
