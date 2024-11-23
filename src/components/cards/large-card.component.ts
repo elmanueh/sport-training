@@ -7,6 +7,7 @@ import {
   CentroDeportivo,
   InstalacionDeportiva,
 } from '../../types/centro-deportivo';
+import { Reserva } from '../../types/programa-entrenamiento';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
   template: `
-    <section class="flex card w-7 h-10rem border-round-xl p-3 shadow-6">
+    <section class="flex card w-7 h-11rem border-round-xl p-3 shadow-6">
       <img
         class="border-round-xl"
         [src]="card.imagen"
@@ -31,7 +32,15 @@ import { FormsModule } from '@angular/forms';
           </p>
           }
         </div>
+        @if (card.hora || card.fecha) {
+        <p class="pt-2 m-0 flex">{{ card.descripcion }}</p>
+        <p class="m-0 flex">Fecha: {{ card.fecha }}</p>
+        <p class="m-0 flex h-full">Hora: {{ card.hora }}</p>
+        @if (card.monitor) {
+        <p class="m-0 flex h-full">Monitor: {{ card.monitor }}</p>
+        } } @else {
         <p class="pt-2 m-0 flex h-full">{{ card.descripcion }}</p>
+        }
         <div class="flex gap-3 justify-content-end">
           @switch (card.tipo) { @case (TypeCard.MultipleButton) {
           <a routerLink="{{ card.id }}/instalaciones">
@@ -63,7 +72,8 @@ export class LargeCardComponent {
   @Input({ required: true }) data!:
     | CentroDeportivo
     | InstalacionDeportiva
-    | ActividadDeportiva;
+    | ActividadDeportiva
+    | Reserva;
   @Input() actualPage: string = '';
 
   TypeCard = TypeCard;
@@ -75,6 +85,9 @@ export class LargeCardComponent {
       valoracion: 0,
       tipo: this.typeCard,
       page: this.actualPage,
+      fecha: '',
+      hora: '',
+      monitor: undefined,
       ...this.data,
     };
   }

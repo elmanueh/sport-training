@@ -27,10 +27,6 @@ import { programaEntrenamiento } from '../consts/programa-entrenamiento';
           [programaEntrenamiento]="programasEntrenamiento[0]"
         />
       </div>
-
-      <div class="card flex justify-content-center mt-6">
-        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
-      </div>
     </section>
   `,
 })
