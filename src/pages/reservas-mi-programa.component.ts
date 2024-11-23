@@ -5,26 +5,26 @@ import { Reserva } from '../types/programa-entrenamiento';
 import { ButtonModule } from 'primeng/button';
 import { TypeCard } from '../types/card';
 import { LargeCardComponent } from '../components/cards/large-card.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'reservas-page',
   standalone: true,
-  imports: [
-    PaginatorModule,
-    ButtonModule,
-    LargeCardComponent,
-  ],
+  imports: [PaginatorModule, ButtonModule, LargeCardComponent, RouterModule],
   template: `
     <div class="flex flex-column">
       <div class="flex justify-content-between">
         <div class="flex pl-7 pt-4 flex-column">
-          <a class="p-button flex justify-content-center">Volver atras</a>
+          <a
+            class="p-button flex justify-content-center"
+            routerLink="/mis-programas"
+            >Volver atras</a
+          >
 
           <label class="flex justify-content-center pt-4 text-2xl">
             {{ programaTitulo }}
           </label>
-          <label
-            class="flex justify-content-center text-yellow-400 text-xl"
+          <label class="flex justify-content-center text-yellow-400 text-xl"
             >PRECIO: 50€</label
           >
         </div>
@@ -41,10 +41,12 @@ import { LargeCardComponent } from '../components/cards/large-card.component';
               <img
                 [src]="entrenador"
                 alt="centro-deportivo-1"
-                class="border-round-xl w-5rem"
+                class="border-round-xl w-4rem"
               />
             </div>
-            <label class="font-bold flex justify-content-center text-white">
+            <label
+              class="font-bold flex justify-content-center text-white text-s"
+            >
               Pablo Peris Solano
             </label>
           </div>
@@ -56,7 +58,7 @@ import { LargeCardComponent } from '../components/cards/large-card.component';
         </div>
       </div>
       <div class="flex flex-column gap-5">
-        @for(reserva of reservas; track reserva.id) {
+        @for(reserva of reservasProximas; track reserva.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="reserva"
@@ -66,22 +68,44 @@ import { LargeCardComponent } from '../components/cards/large-card.component';
       </div>
 
       <div class="card pb-8 flex justify-content-center mt-6">
-        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="indicePaginator"
+          [rows]="columnasPaginator"
+          [totalRecords]="reservas.length"
+          [showPageLinks]="true"
+        />
       </div>
     </div>
   `,
 })
 export class ReservasMiProgramaPage {
   reservas: Reserva[] = [];
+  reservasProximas: Reserva[] = [];
   programaTitulo = '';
   typeCard = TypeCard.StarsButton;
+
+  indicePaginator: number = 0;
+  columnasPaginator: number = 4;
 
   @Input() set id(id: any) {
     this.reservas =
       programaEntrenamiento.find((cd) => cd.id == id)?.reservas || [];
+    this.reservasProximas = this.reservas.slice(
+      this.indicePaginator,
+      this.indicePaginator + this.columnasPaginator
+    );
     this.programaTitulo =
       programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
   }
   entrenador: string =
     'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1';
+
+  onPageChange(event: any) {
+    this.indicePaginator = event.first;
+    this.reservasProximas = this.reservas.slice(
+      this.indicePaginator,
+      this.indicePaginator + this.columnasPaginator
+    );
+  }
 }

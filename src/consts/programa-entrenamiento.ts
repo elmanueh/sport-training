@@ -58,52 +58,52 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         valoracion: 5,
       },
       {
-        id: 5,
-        titulo: 'Clase de Técnica de Saque',
-        descripcion:
-          'Clase enfocada en mejorar la técnica y potencia del saque.',
+        id: 9,
+        titulo: 'Clase de Técnica de Revés a Dos Manos',
+        descripcion: 'Clase práctica para perfeccionar el revés a dos manos.',
         fecha: 'Lunes 13 de enero del 2025',
-        hora: '10:00 AM',
+        hora: '3:00 PM',
         monitor: 'Carlos Rodríguez',
         categoria: 'Actividad',
-        imagen: 'https://i.ytimg.com/vi/ZAU4JSQenv4/sddefault.jpg',
+        imagen:
+          'https://www.onlytenis.com/blog/wp-content/uploads/2022/08/mejorar-el-reves-en-el-tenis.jpg',
         valoracion: 5,
       },
       {
-        id: 6,
-        titulo: 'Gimnasio',
+        id: 10,
+        titulo: 'Entrenamiento de Fondo en Pista',
         descripcion:
-          'Uso del gimnasio con máquinas y pesas para mejorar tu fuerza física.',
+          'Entrenamiento específico para mejorar el fondo de pista en tenis.',
         fecha: 'Martes 14 de enero del 2025',
-        hora: '6:00 PM',
-        categoria: 'Instalación',
-        imagen:
-          'https://www.fitnesstech.es/cdn/shop/articles/Equipamiento_gimnasio_accesorios_para_las_diferentes_salas-531093_1200x849.jpg',
-        valoracion: 4,
-      },
-      {
-        id: 7,
-        titulo: 'Clase de Entrenamiento General',
-        descripcion:
-          'Entrenamiento para perfeccionar habilidades básicas y movimientos en la pista.',
-        fecha: 'Miércoles 15 de enero del 2025',
-        hora: '4:00 PM',
+        hora: '9:00 AM',
         monitor: 'Ana Gómez',
         categoria: 'Actividad',
         imagen:
-          'https://media-cdn.tripadvisor.com/media/photo-s/1b/8c/89/04/clases-de-tenis.jpg',
+          'https://tennistrainingpro.com/wp-content/uploads/2024/04/cuerda-en-cancha-ttp.jpg',
         valoracion: 4,
       },
       {
-        id: 8,
-        titulo: 'Pista de Tenis',
+        id: 11,
+        titulo: 'Pista de Tenis Césped',
         descripcion:
-          'Acceso a una pista de tenis completamente equipada por 2 horas.',
-        fecha: 'Viernes 17 de enero del 2025',
-        hora: '5:00 PM',
+          'Acceso a una pista de tenis de césped completamente equipada por 2 horas.',
+        fecha: 'Miércoles 15 de enero del 2025',
+        hora: '4:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://niberma.es/wp-content/uploads/2022/05/trazado-de-campo-niberma.jpg',
+          'https://www.verdepadel.com/wp-content/uploads/2013/02/Pista-tenis.jpg',
+        valoracion: 5,
+      },
+      {
+        id: 12,
+        titulo: 'Pista de Tenis Tierra Batida',
+        descripcion:
+          'Acceso a una pista de tenis de tierra batida para jugar por 2 horas.',
+        fecha: 'Viernes 17 de enero del 2025',
+        hora: '10:00 AM',
+        categoria: 'Instalación',
+        imagen:
+          'https://sportmegias.com/wp-content/uploads/2012/12/pistas-de-tierra-batida-41.jpg',
         valoracion: 5,
       },
     ],
