@@ -61,7 +61,6 @@ import { RouterModule } from '@angular/router';
             [numVisible]="3"
             [numScroll]="3"
             [circular]="false"
-            [responsiveOptions]="responsiveOptions"
             class="w-9"
           >
             <ng-template pTemplate="item" let-actividad>
@@ -83,7 +82,6 @@ import { RouterModule } from '@angular/router';
             [numVisible]="3"
             [numScroll]="3"
             [circular]="false"
-            [responsiveOptions]="responsiveOptions"
             class="w-9"
           >
             <ng-template pTemplate="item" let-instalacion>
@@ -93,16 +91,12 @@ import { RouterModule } from '@angular/router';
         </div>
       </section>
 
-      <div class="flex justify-content-center">
+      <div class="flex pb-8 justify-content-center">
         <div class="w-9 flex justify-content-end">
           <a class="p-button flex w-5rem h-2rem text-xs justify-content-center">
             Enviar
           </a>
         </div>
-      </div>
-
-      <div class="card flex justify-content-center mt-6">
-        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
       </div>
     </section>
   `,
@@ -111,18 +105,17 @@ export class ValorarPage {
   instalaciones: Reserva[] = [];
   actividades: Reserva[] = [];
   programaTitulo = '';
-  responsiveOptions: any[] | undefined;
 
   @Input() set id(id: any) {
     this.instalaciones =
       programaEntrenamiento
         .find((cd) => cd.id == id)
-        ?.reservas.filter((reserva) => reserva.categoria === 'instalación') ||
+        ?.reservas.filter((reserva) => reserva.categoria === 'Instalación') ||
       [];
     this.actividades =
       programaEntrenamiento
         .find((cd) => cd.id == id)
-        ?.reservas.filter((reserva) => reserva.categoria === 'actividad') || [];
+        ?.reservas.filter((reserva) => reserva.categoria === 'Actividad') || [];
     this.programaTitulo =
       programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
   }
