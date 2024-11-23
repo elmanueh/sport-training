@@ -4,11 +4,18 @@ import { RouterModule } from '@angular/router';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { Reserva } from '../../types/programa-entrenamiento';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @Component({
   selector: 'valorar-card',
   standalone: true,
-  imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
+  imports: [
+    ButtonModule,
+    RouterModule,
+    RatingModule,
+    FormsModule,
+    InputTextareaModule,
+  ],
   template: `
     <div class="flex justify-content-center">
       <div class="p-3 card w-22rem h-26rem border-round-xl shadow-6">
@@ -20,7 +27,7 @@ import { Reserva } from '../../types/programa-entrenamiento';
         <div class="flex gap-3 justify-content-end">
           <p-rating [(ngModel)]="stars" [cancel]="false" />
         </div>
-        <div class="pt-3 pb-3">
+        <div class="pt-3 pb-4">
           <img
             class="border-round-xl flex w-full h-11rem"
             [src]="reserva?.imagen"
@@ -29,10 +36,11 @@ import { Reserva } from '../../types/programa-entrenamiento';
         </div>
         <textarea
           rows="5"
-          cols="30"
+          cols="5"
           pInputTextarea
           [(ngModel)]="comentario"
-          class="w-full border-round-xl"
+          placeholder="Comentario"
+          class="surface-400 text-900 w-full h-5rem border-round-xl"
         ></textarea>
       </div>
     </div>

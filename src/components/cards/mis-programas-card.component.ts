@@ -32,16 +32,16 @@ import { RouterModule } from '@angular/router';
           />
         </div>
         <div class="flex justify-content-between">
-          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs"
+          <a class="p-button flex justify-content-center text-xs"
             >Cambiar Fecha</a
           >
           <a
-            class="p-button flex justify-content-center w-5rem h-2rem text-xs"
+            class="p-button flex justify-content-center text-xs"
             routerLink="{{ programaEntrenamiento?.id }}/valorar"
           >
             Pagar (Valorar)
           </a>
-          <a class="p-button flex justify-content-center w-5rem h-2rem text-xs"
+          <a class="p-button flex justify-content-center text-xs"
             >Cancelar</a
           >
         </div>
