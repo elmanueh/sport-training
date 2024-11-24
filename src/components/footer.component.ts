@@ -4,15 +4,15 @@ import { Component } from '@angular/core';
   selector: 'footer-component',
   standalone: true,
   template: `
-    <footer class="flex justify-content-center text-color bg-footer">
-      <section class="w-8 my-6">
-        <div class="flex justify-content-around">
-          <div class="align-content-center">
-            <div class="flex justify-content-center align-content-center">
+    <footer class="flex justify-center text-color bg-footer">
+      <section class="w-5/6 my-8">
+        <div class="flex justify-around">
+          <div class="content-center">
+            <div class="flex justify-center content-center">
               <img src="assets/logo.png" alt="Logo" width="60px" />
               <p class="ml-3 text-xl font-bold">Sport Training</p>
             </div>
-            <div>
+            <div class="flex">
               <a href="https://www.whatsapp.com" target="_blank">
                 <img
                   class="img-size"
@@ -42,7 +42,7 @@ import { Component } from '@angular/core';
               </a>
             </div>
           </div>
-          <div class="flex justify-content-around w-5">
+          <div class="flex justify-around w-30">
             <div>
               <p class="font-bold text-2xl">SportTraining.com</p>
               <p>Envía tus comentarios</p>
@@ -52,7 +52,7 @@ import { Component } from '@angular/core';
               <p>Políticas de Privacidad</p>
               <p>Políticas de Cookies</p>
             </div>
-            <div>
+            <div class="ml-10">
               <p class="font-bold text-2xl">Lugares</p>
               <p>Murcia</p>
               <p>Almería</p>
@@ -62,7 +62,7 @@ import { Component } from '@angular/core';
             </div>
           </div>
         </div>
-        <p class="text-center mt-6">
+        <p class="text-center mt-10">
           © 2024 Sport Training - Todos los derechos reservados.
         </p>
       </section>

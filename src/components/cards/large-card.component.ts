@@ -16,18 +16,18 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
   template: `
-    <section class="flex card w-7 h-11rem border-round-xl p-3 shadow-6">
+    <section class="flex card w-3/5 h-44 rounded-xl p-5 shadow-xl">
       <img
-        class="border-round-xl"
+        class="rounded-xl"
         [src]="card.imagen"
         alt="Imagen acerca de {{ card.titulo }}"
         width="300rem"
       />
-      <div class="flex flex-column pl-3 w-full">
+      <div class="flex flex-col pl-3 w-full">
         <div class="flex">
           <p class="font-bold text-2xl m-0 w-full">{{ card.titulo }}</p>
           @if (card.tipo != TypeCard.MultipleButton) {
-          <p class="m-0 h-full flex align-content-start">
+          <p class="m-0 h-full flex content-start">
             <strong>{{ card.categoria }}</strong>
           </p>
           }
@@ -41,7 +41,7 @@ import { FormsModule } from '@angular/forms';
         } } @else {
         <p class="pt-2 m-0 flex h-full">{{ card.descripcion }}</p>
         }
-        <div class="flex gap-3 justify-content-end">
+        <div class="flex gap-3 justify-end">
           @switch (card.tipo) { @case (TypeCard.MultipleButton) {
           <a routerLink="{{ card.id }}/instalaciones">
             <p-button label="Instalaciones" raised></p-button>
@@ -50,11 +50,7 @@ import { FormsModule } from '@angular/forms';
             <p-button label="Actividades" raised></p-button>
           </a>
           } @case (TypeCard.StarsButton) {
-          <p-rating
-            [(ngModel)]="card.valoracion"
-            [readonly]="true"
-            [cancel]="false"
-          />
+          <p-rating [(ngModel)]="card.valoracion" [readonly]="true" />
           } }
         </div>
       </div>

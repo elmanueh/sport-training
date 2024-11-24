@@ -5,9 +5,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <div class="flex flex-column align-items-center mt-8">
-      <div class="flex flex-column align-items-center text-yellow-400">
-        <img class="w-3rem" src="assets/logo.png" alt="logo" />
+    <div class="flex flex-col items-center mt-8">
+      <div class="flex flex-col items-center text-yellow-400">
+        <img class="w-12" src="assets/logo.png" alt="logo" />
         <p>Sport Training</p>
       </div>
       <div class="text-gray-300">

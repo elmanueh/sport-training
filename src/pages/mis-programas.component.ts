@@ -8,22 +8,22 @@ import { MisProgramasCardComponent } from '@/components/cards/mis-programas-card
   standalone: true,
   imports: [MisProgramasCardComponent, PaginatorModule],
   template: `
-    <section class="flex flex-column justify-content-center">
-      <p class="tittle-page flex justify-content-center pb-5">Mis Programas</p>
+    <section class="flex flex-col justify-center">
+      <p class="tittle-page flex justify-center pb-5">Mis Programas</p>
 
-      <div class="flex justify-content-center gap-4 mb-5">
+      <div class="flex justify-center gap-4 mb-5">
         @for(pe of programasEntrenamiento; track pe.id) {
         <mis-programas-card
-          class="flex justify-content-center"
+          class="flex justify-center"
           [programaEntrenamiento]="pe"
         />
         }
       </div>
 
-      <div class="flex justify-content-center gap-4 mb-5">
+      <div class="flex justify-center gap-4 mb-5">
         <mis-programas-card
           [data]="'vacio'"
-          class="flex justify-content-center"
+          class="flex justify-center"
           [programaEntrenamiento]="programasEntrenamiento[0]"
         />
       </div>

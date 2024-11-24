@@ -13,25 +13,23 @@ import { TypeCard } from '../types/card';
   standalone: true,
   imports: [PaginatorModule, LargeCardComponent],
   template: `
-    <div class="flex flex-column">
-      <p class="tittle-page flex justify-content-center">
-        Instalaciones Deportivas
-      </p>
-      <p class="flex justify-content-center text-3xl">
+    <div class="flex flex-col">
+      <p class="tittle-page flex justify-center">Instalaciones Deportivas</p>
+      <p class="flex justify-center text-3xl">
         {{ centroDeportivo?.titulo }}
       </p>
 
-      <div class="flex flex-column gap-5">
+      <div class="flex flex-col gap-5">
         @for(i of instalaciones; track i.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="i"
-          class="flex justify-content-center"
+          class="flex justify-center"
         />
         }
       </div>
 
-      <div class="card flex justify-content-center mt-6">
+      <div class="card flex justify-center mt-6">
         <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
       </div>
     </div>

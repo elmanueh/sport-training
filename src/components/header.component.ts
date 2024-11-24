@@ -7,6 +7,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'header-component',
@@ -19,12 +20,13 @@ import { ButtonModule } from 'primeng/button';
     RippleModule,
     CommonModule,
     ButtonModule,
+    RouterModule,
   ],
   template: `
     <p-menubar [model]="items">
       <ng-template pTemplate="start">
-        <a class="flex align-items-center p-3 mr-8" [routerLink]="['/']">
-          <img class="w-3rem" src="assets/logo.png" alt="logo" />
+        <a class="flex items-center p-3 mr-8" [routerLink]="['/']">
+          <img class="w-14" src="assets/logo.png" alt="logo" />
           <p class="pl-3 font-bold text-xl text-color">Sport Training</p>
         </a>
       </ng-template>
@@ -32,21 +34,21 @@ import { ButtonModule } from 'primeng/button';
         <a
           [routerLink]="item.route"
           pRipple
-          class="flex align-items-center p-menuitem-link text-color"
+          class="flex items-center p-menuitem-link text-color"
         >
           <span class="font-bold">{{ item.label }}</span>
         </a>
       </ng-template>
       <ng-template pTemplate="end">
-        <div class="flex align-items-center gap-3 text-color font-bold mr-4">
+        <div class="flex items-center gap-3 text-color font-bold mr-4">
           <input
             type="text"
             pInputText
             placeholder="Buscar"
-            class="w-8rem sm:w-15rem"
+            class="w-32 sm:w-60"
           />
           <p-avatar image="https://github.com/elmanueh.png" shape="circle" />
-          <div class="flex align-items-center gap-5">
+          <div class="flex items-center gap-5">
             <a [routerLink]="['/']"> Únete a Nosotros </a>
             <a [routerLink]="['/login']">Iniciar Sesión</a>
             <a [routerLink]="['/']"> Ayuda </a>

@@ -3,33 +3,27 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { Textarea } from 'primeng/textarea';
 import { Reserva } from '@/types/programa-entrenamiento';
 
 @Component({
   selector: 'valorar-card',
   standalone: true,
-  imports: [
-    ButtonModule,
-    RouterModule,
-    RatingModule,
-    FormsModule,
-    InputTextareaModule,
-  ],
+  imports: [ButtonModule, RouterModule, RatingModule, FormsModule, Textarea],
   template: `
-    <div class="flex justify-content-center">
-      <div class="p-3 card w-22rem h-26rem border-round-xl shadow-6">
-        <div class="flex gap-2 h-4rem pb-3">
+    <div class="flex justify-center">
+      <div class="p-3 card w-80 h-96 rounded-xl shadow-xl">
+        <div class="flex gap-2 h-8 pb-3">
           <div class="font-bold text-2xl flex w-full">
             {{ reserva?.titulo }}
           </div>
         </div>
-        <div class="flex gap-3 justify-content-end">
-          <p-rating [(ngModel)]="stars" [cancel]="false" />
+        <div class="flex gap-3 justify-end">
+          <p-rating [(ngModel)]="stars" />
         </div>
         <div class="pt-3 pb-4">
           <img
-            class="border-round-xl flex w-full h-11rem"
+            class="rounded-xl flex w-full h-44"
             [src]="reserva?.imagen"
             height="250vh"
           />
@@ -37,10 +31,10 @@ import { Reserva } from '@/types/programa-entrenamiento';
         <textarea
           rows="5"
           cols="5"
-          pInputTextarea
+          pTextarea
           [(ngModel)]="comentario"
           placeholder="Comentario"
-          class="surface-400 text-900 w-full h-5rem border-round-xl"
+          class="surface-400 text-900 w-full h-20 rounded-xl"
         ></textarea>
       </div>
     </div>

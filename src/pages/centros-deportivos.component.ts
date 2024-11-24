@@ -9,20 +9,20 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
   standalone: true,
   imports: [PaginatorModule, LargeCardComponent],
   template: `
-    <div class="flex flex-column">
-      <p class="tittle-page flex justify-content-center">Centros Deportivos</p>
+    <div class="flex flex-col">
+      <p class="tittle-page flex justify-center">Centros Deportivos</p>
 
-      <div class="flex flex-column gap-5">
+      <div class="flex flex-col gap-5">
         @for(cd of centrosDeportivos; track cd.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="cd"
-          class="flex justify-content-center"
+          class="flex justify-center"
         />
         }
       </div>
 
-      <div class="card flex justify-content-center mt-6">
+      <div class="card flex justify-center mt-6">
         <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
       </div>
     </div>

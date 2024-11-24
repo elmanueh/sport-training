@@ -12,62 +12,58 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
   standalone: true,
   imports: [PaginatorModule, ButtonModule, LargeCardComponent, RouterModule],
   template: `
-    <div class="flex flex-column">
-      <div class="flex justify-content-between">
-        <div class="flex pl-7 pt-4 flex-column">
-          <a
-            class="p-button flex justify-content-center"
-            routerLink="/mis-programas"
+    <div class="flex flex-col">
+      <div class="flex justify-between">
+        <div class="flex pl-7 pt-4 flex-col">
+          <a class="p-button flex justify-center" routerLink="/mis-programas"
             >Volver atras</a
           >
 
-          <label class="flex justify-content-center pt-4 text-2xl">
+          <label class="flex justify-center pt-4 text-2xl">
             {{ programaTitulo }}
           </label>
-          <label class="flex justify-content-center text-yellow-400 text-xl"
+          <label class="flex justify-center text-yellow-400 text-xl"
             >PRECIO: 50€</label
           >
         </div>
-        <p class="tittle-page flex justify-content-center">
+        <p class="tittle-page flex justify-center">
           VISUALIZA LA PLANIFICACIÓN
         </p>
-        <div class="flex pr-7 justify-content-center">
+        <div class="flex pr-7 justify-center">
           <div class="w-20">
             <label
-              class="font-bold flex justify-content-center text-yellow-400 pt-4 pb-2"
+              class="font-bold flex justify-center text-yellow-400 pt-4 pb-2"
               >ENTRENADOR</label
             >
-            <div class="flex justify-content-center pb-2">
+            <div class="flex justify-center pb-2">
               <img
                 [src]="entrenador"
                 alt="centro-deportivo-1"
-                class="border-round-xl w-4rem"
+                class="rounded-xl w-16"
               />
             </div>
-            <label
-              class="font-bold flex justify-content-center text-white text-s"
-            >
+            <label class="font-bold flex justify-center text-white text-s">
               Pablo Peris Solano
             </label>
           </div>
         </div>
       </div>
-      <div class="flex justify-content-center">
+      <div class="flex justify-center">
         <div class="w-7">
           <p class="font-italic font-bold">Proximas Reservas</p>
         </div>
       </div>
-      <div class="flex flex-column gap-5">
+      <div class="flex flex-col gap-5">
         @for(reserva of reservasProximas; track reserva.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="reserva"
-          class="flex justify-content-center"
+          class="flex justify-center"
         />
         }
       </div>
 
-      <div class="card pb-8 flex justify-content-center mt-6">
+      <div class="card pb-8 flex justify-center mt-6">
         <p-paginator
           (onPageChange)="onPageChange($event)"
           [first]="indicePaginator"

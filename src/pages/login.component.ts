@@ -18,15 +18,15 @@ import { CheckboxModule } from 'primeng/checkbox';
     CheckboxModule,
   ],
   template: `
-    <section class="flex justify-content-center align-content-center">
-      <div class="my-8 w-30rem text-center border-2 border-gray-400">
+    <section class="flex justify-center content-center">
+      <div class="my-8 w-96 text-center border-2 border-gray-400">
         <img class="my-6" src="assets/logo.png" width="60px" />
         <p class="font-bold text-2xl">
           TU CUENTA PARA TODO LO QUE<br />
           SE REFIERE A<br />
           <span class="text-3xl">SPORT TRAINING </span>
         </p>
-        <form class="mt-4 flex flex-column w-20rem">
+        <form class="mt-4 flex flex-col w-80">
           <input
             type="text"
             pInputText
@@ -39,7 +39,7 @@ import { CheckboxModule } from 'primeng/checkbox';
             name="password"
           />
 
-          <div class="flex justify-content-center">
+          <div class="flex justify-center">
             <p-checkbox
               [(ngModel)]="checked"
               [binary]="true"
