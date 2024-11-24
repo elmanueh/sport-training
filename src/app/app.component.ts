@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PrimeNG } from 'primeng/config';
 import { HeaderComponent } from '@/components/header.component';
 import { FooterComponent } from '@/components/footer.component';
-import { PrimeNG } from 'primeng/config';
-import { MyPreset } from '@theme';
 
 @Component({
   selector: 'app-root',
@@ -16,14 +15,9 @@ import { MyPreset } from '@theme';
   `,
 })
 export class AppComponent {
-  constructor(private config: PrimeNG) {
-    this.config.theme.set({
-      preset: MyPreset,
-      options: {
-        prefix: 'p',
-        darkModeSelector: 'system',
-        cssLayer: false,
-      },
-    });
+  constructor(private primeng: PrimeNG) {}
+
+  ngOnInit() {
+    this.primeng.ripple.set(true);
   }
 }
