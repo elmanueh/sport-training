@@ -1,25 +1,35 @@
 import { Component } from '@angular/core';
+import { CarouselHomeComponent } from '@components/carousel-home.component';
 
 @Component({
   selector: 'home-page',
   standalone: true,
-  imports: [],
+  imports: [CarouselHomeComponent],
   template: `
-    <div class="flex flex-col items-center mt-8">
-      <div class="flex flex-col items-center text-yellow-400">
-        <img class="w-12" src="assets/logo.png" alt="logo" />
-        <p>Sport Training</p>
+    <section class="flex w-full justify-center h-full">
+      <div class="flex flex-col w-3/4 mt-40">
+        <div class="flex">
+          <img class="w-12" src="assets/logo.png" alt="logo" />
+          <p class="text-primary text-xl font-bold h-full content-center ml-3">
+            Sport Training
+          </p>
+        </div>
+        <div class="flex flex-col text-color mt-8">
+          <h1 class="text-2xl font-bold">
+            HAZ QUE CADA ENTRENAMIENTO SUME A TUS OBJETIVOS
+          </h1>
+          <p class="text-xl">
+            Tu mejor versión comienza aquí. Donde encontrarás todos los
+            servicios necesarios para alcanzar los objetivos que te propongas.
+          </p>
+        </div>
       </div>
-      <div class="text-gray-300">
-        <p class="text-2xl font-bold">
-          HAZ QUE CADA ENTRENAMIENTO SUME A TUS OBJETIVOS
-        </p>
-        <p class="text-lg">
-          Tu mejor versión comienza aquí. Donde encontrarás todos los servicios
-          necesarios para alcanzar los objetivos que te propongas.
-        </p>
+    </section>
+    <section class="flex w-full justify-center">
+      <div class="flex w-2/4 bg-slate-50">
+        <carousel-home-component></carousel-home-component>
       </div>
-    </div>
+    </section>
   `,
 })
 export class HomePage {}
