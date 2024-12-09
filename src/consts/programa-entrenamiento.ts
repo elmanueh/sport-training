@@ -1,10 +1,13 @@
-import { ProgramaEntrenamiento } from '@/types/programa-entrenamiento';
+import {
+  ProgramaEntrenamiento,
+  ProgramaEntrenamientoEstado,
+} from '@/types/programa-entrenamiento';
 
 export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 1,
     titulo: 'Potencia el Saque',
-    estado: 'Pendiente',
+    estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://media.brainly.com.br/image/rs:fill/w:640/q:75/plain/https://pt-static.z-dn.net/files/d0b/ef3056a1ee53eb3d4a11687f0019559f.jpg',
     reservas: [
@@ -111,7 +114,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 2,
     titulo: 'Futbol',
-    estado: 'Pendiente',
+    estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://blog.cognifit.com/wp-content/uploads/2019/10/futbol-1-1200x766.jpg',
     reservas: [
@@ -216,7 +219,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 3,
     titulo: 'Baloncesto',
-    estado: 'Pendiente',
+    estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://www.idsports.es/blogadmin/uploads/resize/3_1714655611-pexels-markusspiske-1752757.jpg',
     reservas: [
@@ -320,7 +323,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 4,
     titulo: 'Voleibol',
-    estado: 'Pendiente',
+    estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://okdiario.com/img/2019/11/18/donde-se-invento-el-voley-655x368.jpg',
     reservas: [

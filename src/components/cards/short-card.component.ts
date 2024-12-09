@@ -2,7 +2,10 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ShortCard, TypeCard } from '@/types/card';
-import { ProgramaEntrenamiento } from '@/types/programa-entrenamiento';
+import {
+  ProgramaEntrenamiento,
+  ProgramaEntrenamientoEstado,
+} from '@/types/programa-entrenamiento';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { Dialog } from 'primeng/dialog';
@@ -38,29 +41,34 @@ import { DatePicker } from 'primeng/datepicker';
           class="rounded-xl object-cover h-full w-full"
         />
       </div>
-      <div class="flex text-xs justify-between items-end pt-4">
+      <div class="flex text-xs justify-evenly items-end pt-4">
+        @if (programaEntrenamiento.estado !=
+        ProgramaEntrenamientoEstado.MODIFICADO && programaEntrenamiento.estado
+        != ProgramaEntrenamientoEstado.CANCELADO) {
         <div>
           <a
             ><p-button (click)="showDialogFecha()" label="Cambiar fecha" raised
           /></a>
           <p-dialog
             [(visible)]="visibleFecha"
-            [closable]="false"
             [modal]="true"
-            [style]="{ width: '30rem' }"
+            [style]="{ width: '25rem' }"
+            header="Modificar fecha"
           >
-            <div class="flex flex-col items-center p-5">
-              <p class="font-bold text-2xl mb-3 text-center">
-                ¿Deseas cambiar la fecha?
-              </p>
-              <p-datepicker [(ngModel)]="date" class="mb-3" />
-              <div class="flex justify-between gap-3">
+            <div class="flex flex-col items-center h-96">
+              <p-datepicker
+                class="max-w-full"
+                [(ngModel)]="date"
+                [inline]="true"
+              />
+              <div class="flex gap-5 mt-10">
                 <p-button
                   label="Aceptar"
                   raised
                   (click)="
                     visibleFecha = false;
-                    programaEntrenamiento.estado = 'Fecha cambiada'
+                    programaEntrenamiento.estado =
+                      ProgramaEntrenamientoEstado.MODIFICADO
                   "
                 ></p-button>
                 <p-button
@@ -72,9 +80,12 @@ import { DatePicker } from 'primeng/datepicker';
             </div>
           </p-dialog>
         </div>
+        }
         <a routerLink="{{ programaEntrenamiento.id }}/valorar">
           <p-button label="Valorar" raised />
         </a>
+        @if (programaEntrenamiento.estado !=
+        ProgramaEntrenamientoEstado.CANCELADO) {
         <div>
           <a
             ><p-button (click)="showDialogCancelar()" label="Cancelar" raised
@@ -97,7 +108,8 @@ import { DatePicker } from 'primeng/datepicker';
                   raised
                   (click)="
                     visibleCancelar = false;
-                    programaEntrenamiento.estado = 'Cancelado'
+                    programaEntrenamiento.estado =
+                      ProgramaEntrenamientoEstado.CANCELADO
                   "
                 ></p-button>
                 <p-button
@@ -109,6 +121,7 @@ import { DatePicker } from 'primeng/datepicker';
             </div>
           </p-dialog>
         </div>
+        }
       </div>
     </div>
   `,
@@ -116,6 +129,7 @@ import { DatePicker } from 'primeng/datepicker';
 export class ShortCardComponent {
   @Input() actualPage: string = '';
   @Input({ required: true }) programaEntrenamiento!: ProgramaEntrenamiento;
+  ProgramaEntrenamientoEstado = ProgramaEntrenamientoEstado;
 
   TypeCard = TypeCard;
   card!: ShortCard;
