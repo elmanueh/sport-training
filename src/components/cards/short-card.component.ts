@@ -5,11 +5,20 @@ import { ShortCard, TypeCard } from '@/types/card';
 import { ProgramaEntrenamiento } from '@/types/programa-entrenamiento';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { Dialog } from 'primeng/dialog';
+import { DatePicker } from 'primeng/datepicker';
 
 @Component({
   selector: 'short-card',
   standalone: true,
-  imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
+  imports: [
+    ButtonModule,
+    RouterModule,
+    RatingModule,
+    FormsModule,
+    Dialog,
+    DatePicker,
+  ],
   template: `
     <div class="flex flex-col p-4 w-96 rounded-xl shadow-xl bg-black">
       <div class="flex gap-2 pb-3">
@@ -30,11 +39,76 @@ import { FormsModule } from '@angular/forms';
         />
       </div>
       <div class="flex text-xs justify-between items-end pt-4">
-        <a><p-button label="Cambiar fecha" raised /></a>
+        <div>
+          <a
+            ><p-button (click)="showDialogFecha()" label="Cambiar fecha" raised
+          /></a>
+          <p-dialog
+            [(visible)]="visibleFecha"
+            [closable]="false"
+            [modal]="true"
+            [style]="{ width: '30rem' }"
+          >
+            <div class="flex flex-col items-center p-5">
+              <p class="font-bold text-2xl mb-3 text-center">
+                ¿Deseas cambiar la fecha?
+              </p>
+              <p-datepicker [(ngModel)]="date" class="mb-3" />
+              <div class="flex justify-between gap-3">
+                <p-button
+                  label="Aceptar"
+                  raised
+                  (click)="
+                    visibleFecha = false;
+                    programaEntrenamiento.estado = 'Fecha cambiada'
+                  "
+                ></p-button>
+                <p-button
+                  label="Rechazar"
+                  raised
+                  (click)="visibleFecha = false"
+                ></p-button>
+              </div>
+            </div>
+          </p-dialog>
+        </div>
         <a routerLink="{{ programaEntrenamiento.id }}/valorar">
           <p-button label="Valorar" raised />
         </a>
-        <a><p-button label="Cancelar" raised /></a>
+        <div>
+          <a
+            ><p-button (click)="showDialogCancelar()" label="Cancelar" raised
+          /></a>
+          <p-dialog
+            [(visible)]="visibleCancelar"
+            [closable]="false"
+            [modal]="true"
+            [style]="{ width: '30rem' }"
+          >
+            <div class="flex flex-col items-center p-5">
+              <p class="font-bold text-2xl mb-3 text-center">
+                ¿Estás seguro que deseas cancelar el programa deportivo?
+              </p>
+              <p class="mb-2 text-xl">{{ programaEntrenamiento.titulo }}</p>
+              <p class="mb-5">Se devolverá 5€</p>
+              <div class="flex justify-between gap-3">
+                <p-button
+                  label="Aceptar"
+                  raised
+                  (click)="
+                    visibleCancelar = false;
+                    programaEntrenamiento.estado = 'Cancelado'
+                  "
+                ></p-button>
+                <p-button
+                  label="Rechazar"
+                  raised
+                  (click)="visibleCancelar = false"
+                ></p-button>
+              </div>
+            </div>
+          </p-dialog>
+        </div>
       </div>
     </div>
   `,
@@ -55,5 +129,17 @@ export class ShortCardComponent {
       hora: '',
       monitor: undefined,
     };
+  }
+
+  visibleCancelar: boolean = false;
+  visibleFecha: boolean = false;
+  date: Date | undefined;
+
+  showDialogCancelar() {
+    this.visibleCancelar = true;
+  }
+
+  showDialogFecha() {
+    this.visibleFecha = true;
   }
 }
