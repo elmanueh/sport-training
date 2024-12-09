@@ -18,10 +18,10 @@ import { Reserva } from '@/types/programa-entrenamiento';
             {{ reserva?.titulo }}
           </div>
         </div>
-        <div class="flex gap-3 justify-end">
+        <div class="flex pt-3 justify-end">
           <p-rating [(ngModel)]="stars" />
         </div>
-        <div class="pt-3 pb-4">
+        <div class="pt-3 pb-7">
           <img
             class="rounded-xl flex w-full h-44"
             [src]="reserva?.imagen"

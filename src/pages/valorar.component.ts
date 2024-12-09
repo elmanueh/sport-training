@@ -5,6 +5,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { Reserva } from '@/types/programa-entrenamiento';
 import { programaEntrenamiento } from '@/consts/programa-entrenamiento';
 import { ValorarCardComponent } from '@/components/cards/valorar-card.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'valorar-page',
@@ -14,88 +15,78 @@ import { ValorarCardComponent } from '@/components/cards/valorar-card.component'
     PaginatorModule,
     CarouselModule,
     RouterModule,
+    ButtonModule,
   ],
   template: `
-    <section class="flex flex-col justify-center">
+    <div class="flex flex-col">
       <div class="flex justify-between">
-        <div class="flex pl-7 pt-4 flex-col">
-          <a class="p-button flex justify-center" routerLink="/mis-programas"
-            >Volver atras</a
+        <div class="flex flex-col justify-center text-center w-2/12">
+          <a routerLink="/mis-programas">
+            <p-button label="Volver atras" raised></p-button>
+          </a>
+          <label class="pt-4 text-2xl"> {{ programaTitulo }} </label>
+          <label class="text-xl font-bold"
+            >PRECIO: <span class="text-primary"> 50€</span></label
           >
-
-          <label class="flex justify-center pt-4 text-2xl">
-            {{ programaTitulo }}
-          </label>
         </div>
-        <p class="title-page flex justify-center">Valora tu experiencia</p>
-        <div class="flex pr-7 justify-center">
-          <div class="w-20">
-            <label
-              class="font-bold flex justify-center text-yellow-400 pt-4 pb-2"
-              >ENTRENADOR</label
-            >
-            <div class="flex justify-center pb-2">
-              <img
-                [src]="entrenador"
-                alt="centro-deportivo-1"
-                class="rounded-xl w-16"
-              />
-            </div>
-            <label class="font-bold flex justify-center text-white text-s">
-              Pablo Peris Solano
-            </label>
+        <h1 class="title-page text-center">Valora tu experiencia</h1>
+        <div class="flex flex-col justify-center text-center font-bold w-2/12">
+          <p class="text-primary pb-2 text-lg">Entrenador</p>
+          <div class="flex justify-center pb-2">
+            <img
+              class="rounded-xl w-20"
+              [src]="entrenador"
+              alt="centro-deportivo-1"
+            />
           </div>
+          <p>Pablo Peris Solano</p>
         </div>
       </div>
 
-      <section class="flex flex-col pb-5">
-        <div class="flex justify-center pb-3">
-          <div class="w-9">
+      <div class="flex flex-col items-center">
+        <div class="flex flex-col pb-5 w-9/12">
+          <div class="flex pb-3">
             <p class="font-italic text-xl font-bold">Actividades</p>
           </div>
-        </div>
-        <div class="flex justify-center">
-          <p-carousel
-            [value]="actividades"
-            [numVisible]="3"
-            [numScroll]="3"
-            [circular]="false"
-            class="w-9"
-          >
-            <ng-template pTemplate="item" let-actividad>
-              <valorar-card [reserva]="actividad" />
-            </ng-template>
-          </p-carousel>
-        </div>
-      </section>
-
-      <section class="flex flex-col pb-5">
-        <div class="flex justify-center pb-3">
-          <div class="w-9">
-            <p class="font-italic text-xl font-bold">Instalaciones</p>
+          <div>
+            <p-carousel
+              [value]="actividades"
+              [numVisible]="3"
+              [numScroll]="3"
+              [circular]="false"
+            >
+              <ng-template pTemplate="item" let-actividad>
+                <valorar-card [reserva]="actividad" />
+              </ng-template>
+            </p-carousel>
           </div>
         </div>
-        <div class="flex justify-center">
-          <p-carousel
-            [value]="instalaciones"
-            [numVisible]="3"
-            [numScroll]="3"
-            [circular]="false"
-            class="w-9"
-          >
-            <ng-template pTemplate="item" let-instalacion>
-              <valorar-card [reserva]="instalacion" />
-            </ng-template>
-          </p-carousel>
-        </div>
-      </section>
 
-      <div class="flex pb-8 justify-center">
-        <div class="w-9 flex justify-end">
-          <a class="p-button flex w-20 h-8 text-xs justify-center"> Enviar </a>
+        <div class="flex flex-col pb-5 w-9/12">
+          <div class="flex pb-3">
+            <p class="font-italic text-xl font-bold">Instalaciones</p>
+          </div>
+          <div>
+            <p-carousel
+              [value]="instalaciones"
+              [numVisible]="3"
+              [numScroll]="3"
+              [circular]="false"
+            >
+              <ng-template pTemplate="item" let-instalacion>
+                <valorar-card [reserva]="instalacion" />
+              </ng-template>
+            </p-carousel>
+          </div>
+        </div>
+
+        <div class="flex justify-end w-9/12">
+          <a routerLink="/mis-programas">
+            <p-button label="Enviar" raised></p-button>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   `,
 })
 export class ValorarPage {
