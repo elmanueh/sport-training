@@ -9,7 +9,7 @@ import { MisProgramasCardComponent } from '@/components/cards/mis-programas-card
   imports: [MisProgramasCardComponent, PaginatorModule],
   template: `
     <section class="flex flex-col justify-center">
-      <p class="tittle-page flex justify-center pb-5">Mis Programas</p>
+      <p class="title-page text-center pb-5">Mis Programas</p>
 
       <div class="flex justify-center gap-4 mb-5">
         @for(pe of programasEntrenamiento; track pe.id) {

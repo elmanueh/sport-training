@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'footer-component',
   standalone: true,
   template: `
-    <footer class="flex justify-center text-color bg-footer">
+    <footer class="flex justify-center mt-10">
       <section class="w-5/6 my-8">
         <div class="flex justify-around">
           <div class="content-center">
@@ -73,10 +73,6 @@ import { Component } from '@angular/core';
       width: 50px;
       height: 50px;
       margin: 30px 5px 0 5px;
-    }
-
-    .bg-footer {
-      background-color: #222;
     }
   `,
 })

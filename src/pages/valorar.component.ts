@@ -27,7 +27,7 @@ import { ValorarCardComponent } from '@/components/cards/valorar-card.component'
             {{ programaTitulo }}
           </label>
         </div>
-        <p class="tittle-page flex justify-center">Valora tu experiencia</p>
+        <p class="title-page flex justify-center">Valora tu experiencia</p>
         <div class="flex pr-7 justify-center">
           <div class="w-20">
             <label
