@@ -15,7 +15,9 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
     <div class="flex flex-col">
       <div class="flex justify-between">
         <div class="flex flex-col justify-center text-center w-2/12">
-          <a class="p-button" routerLink="/mis-programas">Volver atras</a>
+          <a routerLink="/mis-programas">
+            <p-button label="Volver atras" raised></p-button>
+          </a>
           <label class="pt-4 text-2xl"> {{ programaTitulo }} </label>
           <label class="text-xl font-bold"
             >PRECIO: <span class="text-primary"> 50€</span></label
@@ -35,7 +37,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
         </div>
       </div>
       <div class="flex flex-col gap-5">
-        @for(reserva of reservas.slice(first, first + (page+1)*rows); track
+        @for(reserva of reservas.slice(first, first + rows); track
         reserva.id) {
         <large-card
           [typeCard]="typeCard"

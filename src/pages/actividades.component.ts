@@ -17,7 +17,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
       </p>
 
       <div class="flex flex-col gap-5">
-        @for(a of actividades.slice(first, first + (page+1)*rows); track a.id) {
+        @for(a of actividades.slice(first, first + rows); track a.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="a"

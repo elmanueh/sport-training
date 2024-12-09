@@ -13,7 +13,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
       <p class="title-page text-center">Centros Deportivos</p>
 
       <div class="flex flex-col gap-5">
-        @for(cd of centrosDeportivos.slice(first, first + (page+1)*rows); track
+        @for(cd of centrosDeportivos.slice(first, first + rows); track
         cd.id) {
         <large-card
           [typeCard]="typeCard"
