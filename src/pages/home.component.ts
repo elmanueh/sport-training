@@ -6,8 +6,8 @@ import { CarouselHomeComponent } from '@components/carousel-home.component';
   standalone: true,
   imports: [CarouselHomeComponent],
   template: `
-    <section class="flex w-full justify-center h-full">
-      <div class="flex flex-col w-3/4 mt-40">
+    <section class="flex w-full justify-center mb-20">
+      <div class="flex flex-col w-3/5 mt-40">
         <div class="flex">
           <img class="w-12" src="assets/logo.png" alt="logo" />
           <p class="text-primary text-xl font-bold h-full content-center ml-3">
@@ -25,11 +25,7 @@ import { CarouselHomeComponent } from '@components/carousel-home.component';
         </div>
       </div>
     </section>
-    <section class="flex justify-center">
-      <div class="flex w-2/3">
-        <carousel-home-component></carousel-home-component>
-      </div>
-    </section>
+    <carousel-home-component></carousel-home-component>
   `,
 })
 export class HomePage {}
