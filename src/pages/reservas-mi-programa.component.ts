@@ -35,7 +35,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
         </div>
       </div>
       <div class="flex flex-col gap-5">
-        @for(reserva of reservas.slice(first, first + (page+1)*rows); track
+        @for(reserva of reservas.slice(first, first + rows); track
         reserva.id) {
         <large-card
           [typeCard]="typeCard"

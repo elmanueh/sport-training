@@ -18,7 +18,7 @@ import { TypeCard } from '../types/card';
       <p class="subtitle-page text-center">{{ centroDeportivo?.titulo }}</p>
 
       <div class="flex flex-col gap-5">
-        @for(i of instalaciones.slice(first, first + (page+1)*rows); track i.id)
+        @for(i of instalaciones.slice(first, first + rows); track i.id)
         {
         <large-card
           [typeCard]="typeCard"
