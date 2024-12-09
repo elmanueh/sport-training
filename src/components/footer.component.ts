@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
       <section class="w-5/6 my-8">
         <div class="flex justify-around">
           <div class="content-center">
-            <div class="flex justify-center content-center">
+            <div class="flex justify-center items-center">
               <img src="assets/logo.png" alt="Logo" width="60px" />
-              <p class="ml-3 text-xl font-bold">Sport Training</p>
+              <p class="ml-3 text-xl font-bold text-primary">Sport Training</p>
             </div>
             <div class="flex">
               <a href="https://www.whatsapp.com" target="_blank">
@@ -43,8 +43,10 @@ import { Component } from '@angular/core';
             </div>
           </div>
           <div class="flex justify-around w-30">
-            <div>
-              <p class="font-bold text-2xl">SportTraining.com</p>
+            <div class="falso-click">
+              <p class="font-bold text-2xl text-primary mb-2">
+                SportTraining.com
+              </p>
               <p>Envía tus comentarios</p>
               <p>Publicidad</p>
               <p>Contacto</p>
@@ -52,8 +54,8 @@ import { Component } from '@angular/core';
               <p>Políticas de Privacidad</p>
               <p>Políticas de Cookies</p>
             </div>
-            <div class="ml-10">
-              <p class="font-bold text-2xl">Lugares</p>
+            <div class="ml-10 falso-click">
+              <p class="font-bold text-2xl text-primary mb-2">Lugares</p>
               <p>Murcia</p>
               <p>Almería</p>
               <p>Albacete</p>
@@ -73,6 +75,11 @@ import { Component } from '@angular/core';
       width: 50px;
       height: 50px;
       margin: 30px 5px 0 5px;
+    }
+
+    .falso-click :hover {
+      cursor: pointer;
+      text-decoration: underline;
     }
   `,
 })
