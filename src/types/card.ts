@@ -18,3 +18,5 @@ export interface LargeCard
   tipo: TypeCard;
   page: string;
 }
+
+export interface ShortCard {}
