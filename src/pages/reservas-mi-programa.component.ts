@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { PaginatorModule } from 'primeng/paginator';
+import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { Reserva } from '@/types/programa-entrenamiento';
 import { TypeCard } from '@/types/card';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
@@ -14,47 +14,29 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
   template: `
     <div class="flex flex-col">
       <div class="flex justify-between">
-        <div class="flex pl-7 pt-4 flex-col">
-          <a class="p-button flex justify-center" routerLink="/mis-programas"
-            >Volver atras</a
-          >
-
-          <label class="flex justify-center pt-4 text-2xl">
-            {{ programaTitulo }}
-          </label>
-          <label class="flex justify-center text-yellow-400 text-xl"
-            >PRECIO: 50€</label
+        <div class="flex flex-col justify-center text-center w-2/12">
+          <a class="p-button" routerLink="/mis-programas">Volver atras</a>
+          <label class="pt-4 text-2xl"> {{ programaTitulo }} </label>
+          <label class="text-xl font-bold"
+            >PRECIO: <span class="text-primary"> 50€</span></label
           >
         </div>
-        <p class="tittle-page flex justify-center">
-          VISUALIZA LA PLANIFICACIÓN
-        </p>
-        <div class="flex pr-7 justify-center">
-          <div class="w-20">
-            <label
-              class="font-bold flex justify-center text-yellow-400 pt-4 pb-2"
-              >ENTRENADOR</label
-            >
-            <div class="flex justify-center pb-2">
-              <img
-                [src]="entrenador"
-                alt="centro-deportivo-1"
-                class="rounded-xl w-16"
-              />
-            </div>
-            <label class="font-bold flex justify-center text-white text-s">
-              Pablo Peris Solano
-            </label>
+        <h1 class="title-page text-center">Visualiza la Planificación</h1>
+        <div class="flex flex-col justify-center text-center font-bold w-2/12">
+          <p class="text-primary pb-2 text-lg">Entrenador</p>
+          <div class="flex justify-center pb-2">
+            <img
+              class="rounded-xl w-20"
+              [src]="entrenador"
+              alt="centro-deportivo-1"
+            />
           </div>
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <div class="w-7">
-          <p class="font-italic font-bold">Proximas Reservas</p>
+          <p>Pablo Peris Solano</p>
         </div>
       </div>
       <div class="flex flex-col gap-5">
-        @for(reserva of reservasProximas; track reserva.id) {
+        @for(reserva of reservas.slice(first, first + (page+1)*rows); track
+        reserva.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="reserva"
@@ -63,13 +45,13 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
         }
       </div>
 
-      <div class="card pb-8 flex justify-center mt-6">
+      <div class="card flex justify-center mt-10">
         <p-paginator
           (onPageChange)="onPageChange($event)"
-          [first]="indicePaginator"
-          [rows]="columnasPaginator"
+          [first]="first"
+          [rows]="rows"
           [totalRecords]="reservas.length"
-          [showPageLinks]="true"
+          [rowsPerPageOptions]="[3, 5, 10]"
         />
       </div>
     </div>
@@ -77,31 +59,26 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
 })
 export class ReservasMiProgramaPage {
   reservas: Reserva[] = [];
-  reservasProximas: Reserva[] = [];
   programaTitulo = '';
   typeCard = TypeCard.StarsButton;
-
-  indicePaginator: number = 0;
-  columnasPaginator: number = 4;
 
   @Input() set id(id: any) {
     this.reservas =
       programaEntrenamiento.find((cd) => cd.id == id)?.reservas || [];
-    this.reservasProximas = this.reservas.slice(
-      this.indicePaginator,
-      this.indicePaginator + this.columnasPaginator
-    );
     this.programaTitulo =
       programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
   }
   entrenador: string =
     'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1';
 
-  onPageChange(event: any) {
-    this.indicePaginator = event.first;
-    this.reservasProximas = this.reservas.slice(
-      this.indicePaginator,
-      this.indicePaginator + this.columnasPaginator
-    );
+  first: number = 0;
+  rows: number = 3;
+  page: number = 0;
+
+  onPageChange(event: PaginatorState) {
+    console.log(event);
+    this.first = event.first ?? this.first;
+    this.rows = event.rows ?? this.rows;
+    this.page = event.page ?? this.page;
   }
 }

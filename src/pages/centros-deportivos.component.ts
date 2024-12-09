@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PaginatorModule } from 'primeng/paginator';
+import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { TypeCard } from '@/types/card';
 import { centrosDeportivos } from '@/consts/centro-deportivo';
 import { LargeCardComponent } from '@/components/cards/large-card.component';
@@ -10,10 +10,11 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
   imports: [PaginatorModule, LargeCardComponent],
   template: `
     <div class="flex flex-col">
-      <p class="tittle-page flex justify-center">Centros Deportivos</p>
+      <p class="title-page text-center">Centros Deportivos</p>
 
       <div class="flex flex-col gap-5">
-        @for(cd of centrosDeportivos; track cd.id) {
+        @for(cd of centrosDeportivos.slice(first, first + (page+1)*rows); track
+        cd.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="cd"
@@ -22,8 +23,14 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
         }
       </div>
 
-      <div class="card flex justify-center mt-6">
-        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
+      <div class="card flex justify-center mt-10">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="first"
+          [rows]="rows"
+          [totalRecords]="centrosDeportivos.length"
+          [rowsPerPageOptions]="[3, 5, 10]"
+        />
       </div>
     </div>
   `,
@@ -31,4 +38,14 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
 export class CentrosDeportivosPage {
   centrosDeportivos = centrosDeportivos;
   typeCard = TypeCard.MultipleButton;
+
+  first: number = 0;
+  rows: number = 3;
+  page: number = 0;
+
+  onPageChange(event: PaginatorState) {
+    this.first = event.first ?? this.first;
+    this.rows = event.rows ?? this.rows;
+    this.page = event.page ?? this.page;
+  }
 }

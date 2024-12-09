@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PaginatorModule } from 'primeng/paginator';
+import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { centrosDeportivos } from '@/consts/centro-deportivo';
 import {
   CentroDeportivo,
@@ -14,13 +14,12 @@ import { TypeCard } from '../types/card';
   imports: [PaginatorModule, LargeCardComponent],
   template: `
     <div class="flex flex-col">
-      <p class="tittle-page flex justify-center">Instalaciones Deportivas</p>
-      <p class="flex justify-center text-3xl">
-        {{ centroDeportivo?.titulo }}
-      </p>
+      <p class="title-page text-center">Instalaciones Deportivas</p>
+      <p class="subtitle-page text-center">{{ centroDeportivo?.titulo }}</p>
 
       <div class="flex flex-col gap-5">
-        @for(i of instalaciones; track i.id) {
+        @for(i of instalaciones.slice(first, first + (page+1)*rows); track i.id)
+        {
         <large-card
           [typeCard]="typeCard"
           [data]="i"
@@ -29,8 +28,14 @@ import { TypeCard } from '../types/card';
         }
       </div>
 
-      <div class="card flex justify-center mt-6">
-        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
+      <div class="card flex justify-center mt-10">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="first"
+          [rows]="rows"
+          [totalRecords]="instalaciones.length"
+          [rowsPerPageOptions]="[3, 5, 10]"
+        />
       </div>
     </div>
   `,
@@ -43,5 +48,15 @@ export class InstalacionesPage {
   @Input() set id(id: any) {
     this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);
     this.instalaciones = this.centroDeportivo?.instalaciones || [];
+  }
+
+  first: number = 0;
+  rows: number = 3;
+  page: number = 0;
+
+  onPageChange(event: PaginatorState) {
+    this.first = event.first ?? this.first;
+    this.rows = event.rows ?? this.rows;
+    this.page = event.page ?? this.page;
   }
 }

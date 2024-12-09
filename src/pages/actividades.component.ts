@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PaginatorModule } from 'primeng/paginator';
+import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { centrosDeportivos } from '@/consts/centro-deportivo';
 import { TypeCard } from '@/types/card';
 import { ActividadDeportiva, CentroDeportivo } from '@/types/centro-deportivo';
@@ -11,23 +11,29 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
   imports: [PaginatorModule, LargeCardComponent],
   template: `
     <div class="flex flex-col">
-      <p class="tittle-page flex justify-center">Actividades Deportivas</p>
-      <p class="flex justify-center text-3xl">
+      <p class="title-page text-center">Actividades Deportivas</p>
+      <p class="subtitle-page text-center">
         {{ centroDeportivo?.titulo }}
       </p>
 
       <div class="flex flex-col gap-5">
-        @for(actividad of actividades; track actividad.id) {
+        @for(a of actividades.slice(first, first + (page+1)*rows); track a.id) {
         <large-card
           [typeCard]="typeCard"
-          [data]="actividad"
+          [data]="a"
           class="flex justify-center"
         />
         }
       </div>
 
-      <div class="card flex justify-center mt-6">
-        <p-paginator [first]="1" [rows]="3" [totalRecords]="30" />
+      <div class="card flex justify-center mt-10">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="first"
+          [rows]="rows"
+          [totalRecords]="actividades.length"
+          [rowsPerPageOptions]="[3, 5, 10]"
+        />
       </div>
     </div>
   `,
@@ -40,5 +46,15 @@ export class ActividadesPage {
   @Input() set id(id: any) {
     this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);
     this.actividades = this.centroDeportivo?.actividades || [];
+  }
+
+  first: number = 0;
+  rows: number = 3;
+  page: number = 0;
+
+  onPageChange(event: PaginatorState) {
+    this.first = event.first ?? this.first;
+    this.rows = event.rows ?? this.rows;
+    this.page = event.page ?? this.page;
   }
 }
