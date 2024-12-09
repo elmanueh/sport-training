@@ -6,6 +6,8 @@ import { Reserva } from '@/types/programa-entrenamiento';
 import { programaEntrenamiento } from '@/consts/programa-entrenamiento';
 import { ValorarCardComponent } from '@/components/cards/valorar-card.component';
 import { ButtonModule } from 'primeng/button';
+import { MessageService } from 'primeng/api';
+import { Toast } from 'primeng/toast';
 
 @Component({
   selector: 'valorar-page',
@@ -16,13 +18,15 @@ import { ButtonModule } from 'primeng/button';
     CarouselModule,
     RouterModule,
     ButtonModule,
+    Toast,
   ],
+  providers: [MessageService],
   template: `
-    <div class="flex flex-col">
+    <section class="flex flex-col">
       <div class="flex justify-between">
         <div class="flex flex-col justify-center text-center w-2/12">
           <a routerLink="/mis-programas">
-            <p-button label="Volver atras" raised></p-button>
+            <p-button label="Volver atrás" raised></p-button>
           </a>
           <label class="pt-4 text-2xl"> {{ programaTitulo }} </label>
           <label class="text-xl font-bold"
@@ -81,12 +85,11 @@ import { ButtonModule } from 'primeng/button';
         </div>
 
         <div class="flex justify-end w-9/12">
-          <a routerLink="/mis-programas">
-            <p-button label="Enviar" raised></p-button>
-          </a>
+          <p-toast />
+          <a> <p-button (onClick)="show()" label="Enviar" raised /> </a>
         </div>
       </div>
-    </div>
+    </section>
   `,
 })
 export class ValorarPage {
@@ -109,4 +112,17 @@ export class ValorarPage {
   }
   entrenador: string =
     'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1';
+
+  constructor(private messageService: MessageService) {}
+  show() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Valoración enviada',
+      detail: 'La valoración se ha enviado correctamente.',
+    });
+
+    setTimeout(() => {
+      window.history.back();
+    }, 4000);
+  }
 }
