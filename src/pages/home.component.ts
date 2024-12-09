@@ -25,8 +25,8 @@ import { CarouselHomeComponent } from '@components/carousel-home.component';
         </div>
       </div>
     </section>
-    <section class="flex w-full justify-center">
-      <div class="flex w-2/4 bg-slate-50">
+    <section class="flex justify-center">
+      <div class="flex w-2/3">
         <carousel-home-component></carousel-home-component>
       </div>
     </section>
