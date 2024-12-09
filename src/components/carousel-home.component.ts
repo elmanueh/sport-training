@@ -8,7 +8,7 @@ import { TagModule } from 'primeng/tag';
   standalone: true,
   imports: [CarouselModule, ButtonModule, TagModule],
   template: `
-    <div class="bg-transparent">
+    <div>
       <p-carousel
         [value]="images"
         [numVisible]="1"
@@ -16,15 +16,16 @@ import { TagModule } from 'primeng/tag';
         [circular]="true"
         [showIndicators]="false"
         [showNavigators]="false"
-        autoplayInterval="3000"
+        autoplayInterval="5000"
       >
-        >
         <ng-template let-images #item>
-          <img
-            src="{{ images.image }}"
-            [alt]="images.name"
-            class="rounded-border"
-          />
+          <div class="flex justify-center">
+            <img
+              src="{{ images.image }}"
+              [alt]="images.name"
+              class="rounded-xl"
+            />
+          </div>
         </ng-template>
       </p-carousel>
     </div>
