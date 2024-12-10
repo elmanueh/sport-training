@@ -37,6 +37,7 @@ import { PasswordModule } from 'primeng/password';
       <p-dialog
         [(visible)]="visibleNuevo"
         [modal]="true"
+        [draggable]="false"
         [style]="{ width: '25rem' }"
         header="Crear nuevo programa"
       >
@@ -87,6 +88,7 @@ import { PasswordModule } from 'primeng/password';
           <p-dialog
             [(visible)]="visibleFecha"
             [modal]="true"
+            [draggable]="false"
             [style]="{ width: '25rem' }"
             header="Modificar fecha"
           >
@@ -127,6 +129,7 @@ import { PasswordModule } from 'primeng/password';
             header="Realizar pago"
             [(visible)]="visiblePagar"
             [modal]="true"
+            [draggable]="false"
             [style]="{ width: '25rem' }"
           >
             <div class="flex flex-col gap-5 items-center text-base">
@@ -205,6 +208,7 @@ import { PasswordModule } from 'primeng/password';
             [(visible)]="visibleCancelar"
             [modal]="true"
             [style]="{ width: '30rem' }"
+            [draggable]="false"
           >
             <div class="flex flex-col items-center mx-8">
               <p class="font-bold text-2xl mb-3 text-center">
