@@ -12,7 +12,7 @@ import { ShortCardComponent } from '@/components/cards/short-card.component';
       <p class="title-page text-center pb-5">Mis Programas</p>
 
       <div class="flex justify-center gap-4 mb-5">
-        @for(pe of programasEntrenamiento; track pe.id) {
+        @for(pe of programasEntrenamiento.slice(0, 4); track pe.id) {
         <short-card
           class="flex justify-center"
           [programaEntrenamiento]="pe"
@@ -23,7 +23,7 @@ import { ShortCardComponent } from '@/components/cards/short-card.component';
       <div class="flex justify-center gap-4 mb-5">
         <short-card
           class="flex justify-center"
-          [programaEntrenamiento]="programasEntrenamiento[0]"
+          [programaEntrenamiento]="programasEntrenamiento[4]"
         />
       </div>
     </section>

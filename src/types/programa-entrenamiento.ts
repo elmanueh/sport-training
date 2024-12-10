@@ -5,6 +5,7 @@ export enum ProgramaEntrenamientoEstado {
   PAGADO = 'Pagado',
   MODIFICADO = 'Modificado',
   PENDIENTE = 'Pendiente',
+  NUEVO = 'Nuevo',
 }
 
 export interface ProgramaEntrenamiento {

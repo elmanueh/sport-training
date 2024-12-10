@@ -7,7 +7,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 1,
     titulo: 'Potencia el Saque',
-    estado: ProgramaEntrenamientoEstado.PENDIENTE,
+    estado: ProgramaEntrenamientoEstado.FINALIZADO,
     imagen:
       'https://media.brainly.com.br/image/rs:fill/w:640/q:75/plain/https://pt-static.z-dn.net/files/d0b/ef3056a1ee53eb3d4a11687f0019559f.jpg',
     reservas: [
@@ -114,7 +114,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 2,
     titulo: 'Futbol',
-    estado: ProgramaEntrenamientoEstado.PENDIENTE,
+    estado: ProgramaEntrenamientoEstado.FINALIZADO,
     imagen:
       'https://blog.cognifit.com/wp-content/uploads/2019/10/futbol-1-1200x766.jpg',
     reservas: [
@@ -423,5 +423,12 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         valoracion: 4,
       },
     ],
+  },
+  {
+    id: 5,
+    titulo: 'NUEVO',
+    estado: ProgramaEntrenamientoEstado.NUEVO,
+    imagen: "",
+    reservas: [],
   },
 ];
