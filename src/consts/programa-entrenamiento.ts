@@ -7,7 +7,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 1,
     titulo: 'Potencia el Saque',
-    precio: 40,
+    precio: 50,
     entrenadorNombre: 'Pablo Peris Solano',
     entrenadorFoto:
       'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
@@ -118,10 +118,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 2,
     titulo: 'Futbol',
-    precio: 50,
-    entrenadorNombre: 'Pablo Peris Solano',
+    precio: 40,
+    entrenadorNombre: 'Jose Canovas Garcia',
     entrenadorFoto:
-      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
+      'https://www.josecano.fitness/wp-content/uploads/2019/05/Jos%C3%A9-Cano-Entrenador-Personal-Madrid.jpg',
     estado: ProgramaEntrenamientoEstado.FINALIZADO,
     imagen:
       'https://blog.cognifit.com/wp-content/uploads/2019/10/futbol-1-1200x766.jpg',
@@ -227,10 +227,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 3,
     titulo: 'Baloncesto',
-    precio: 50,
-    entrenadorNombre: 'Pablo Peris Solano',
+    precio: 70,
+    entrenadorNombre: 'Juan Pérez García',
     entrenadorFoto:
-      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
+      'https://www.fitactiva.com/wp-content/uploads/2022/08/entrenador-1.png',
     estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://www.idsports.es/blogadmin/uploads/resize/3_1714655611-pexels-markusspiske-1752757.jpg',
@@ -335,10 +335,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 4,
     titulo: 'Voleibol',
-    precio: 50,
-    entrenadorNombre: 'Pablo Peris Solano',
+    precio: 100,
+    entrenadorNombre: 'Sergio Palomares Hernández',
     entrenadorFoto:
-      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
+      'https://sergiopalomares.es/wp-content/uploads/2024/10/foto1.jpg',
     estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://okdiario.com/img/2019/11/18/donde-se-invento-el-voley-655x368.jpg',
