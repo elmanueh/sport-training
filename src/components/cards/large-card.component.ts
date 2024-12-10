@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
   template: `
-    <section class="flex w-3/5 h-44 rounded-xl p-5 shadow-xl bg-primary-800">
+    <section class="flex w-3/5 h-48 rounded-xl p-5 shadow-xl bg-primary-800">
       <img
         class="rounded-xl"
         [src]="card.imagen"
