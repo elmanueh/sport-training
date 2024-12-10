@@ -12,7 +12,8 @@ import { Dialog } from 'primeng/dialog';
 import { DatePicker } from 'primeng/datepicker';
 import { InputNumber } from 'primeng/inputnumber';
 import { CommonModule } from '@angular/common';
-import { PasswordModule } from 'primeng/password';
+import { CalendarModule } from 'primeng/calendar';
+import { Select } from 'primeng/select';
 
 @Component({
   selector: 'short-card',
@@ -25,8 +26,9 @@ import { PasswordModule } from 'primeng/password';
     Dialog,
     DatePicker,
     InputNumber,
-    PasswordModule,
     CommonModule,
+    CalendarModule,
+    Select,
   ],
   template: `
     @if (programaEntrenamiento.estado == ProgramaEntrenamientoEstado.NUEVO) {
@@ -38,22 +40,82 @@ import { PasswordModule } from 'primeng/password';
         [(visible)]="visibleNuevo"
         [modal]="true"
         [draggable]="false"
-        [style]="{ width: '25rem' }"
-        header="Crear nuevo programa"
+        [style]="{ width: '30rem' }"
+        header="Planifica tu enfoque de entrenamiento"
       >
-        <div class="flex flex-col items-center">
-          <h1 class="text-2xl font-bold">PEDIR DATOS</h1>
+        <div class="flex flex-col items-center gap-5">
+          <div class="flex flex-col gap-2 w-full">
+            <label for="nombrePrograma">Nombre del programa</label>
+            <input
+              type="text"
+              class="p-inputtext"
+              [(ngModel)]="datos.nombrePrograma"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2 w-full">
+            <label for="fechaInicio">Fecha Inicio</label>
+            <p-datepicker
+              [(ngModel)]="datos.fechaInicio"
+              dateFormat="dd/mm/yy"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2 w-full">
+            <label for="diasEntreno">Días a la semana</label>
+            <input
+              class="p-inputtext"
+              id="diasEntreno"
+              type="number"
+              [(ngModel)]="datos.diasEntreno"
+              min="1"
+              max="7"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2 w-full">
+            <label for="deporte">Seleccionar Deporte</label>
+            <p-select
+              id="deporte"
+              [(ngModel)]="datos.deporte"
+              [options]="deportes"
+              optionLabel="name"
+              placeholder="Seleccione un deporte"
+            ></p-select>
+          </div>
+
+          <div class="flex flex-col gap-2 w-full">
+            <label for="centroDeportivo">Seleccionar Centro Deportivo</label>
+            <p-select
+              id="centroDeportivo"
+              [(ngModel)]="datos.centroDeportivo"
+              [options]="centrosDeportivo"
+              optionLabel="name"
+              placeholder="Seleccione un centro"
+            ></p-select>
+          </div>
+
+          <div class="flex flex-col gap-2 w-full">
+            <label for="franjaHoraria">Seleccionar Franja Horaria</label>
+            <p-select
+              id="franjaHoraria"
+              [(ngModel)]="datos.franjaHoraria"
+              [options]="franjasHorarias"
+              optionLabel="name"
+              placeholder="Seleccione una franja horaria"
+            ></p-select>
+          </div>
 
           <div class="flex gap-5 mt-4">
             <p-button
               label="Aceptar"
               raised
-              (click)="visiblePagar = false"
+              (click)="visibleNuevo = false"
             ></p-button>
             <p-button
               label="Rechazar"
               raised
-              (click)="visiblePagar = false"
+              (click)="visibleNuevo = false"
             ></p-button>
           </div>
         </div>
@@ -132,18 +194,18 @@ import { PasswordModule } from 'primeng/password';
             [draggable]="false"
             [style]="{ width: '25rem' }"
           >
-            <div class="flex flex-col gap-5 items-center text-base">
-              <div class="flex flex-col w-72 gap-2">
+            <div class="flex flex-col gap-8 items-center text-base">
+              <div class="flex flex-col w-full gap-3">
                 <label for="nombreTarjeta">Nombre en la tarjeta</label>
                 <input
                   type="text"
                   id="nombreTarjeta"
                   [(ngModel)]="datosPagos.nombre"
-                  class="h-10"
+                  class="p-inputtext"
                 />
               </div>
 
-              <div class="flex flex-col w-72 gap-2">
+              <div class="flex flex-col w-full gap-3">
                 <label for="numeroTarjeta">Número de la tarjeta</label>
                 <p-inputnumber
                   mode="decimal"
@@ -152,8 +214,8 @@ import { PasswordModule } from 'primeng/password';
                   [(ngModel)]="datosPagos.numero"
                 />
               </div>
-              <div class="flex flex-row w-72 gap-2">
-                <div class="flex flex-col gap-2 w-1/2">
+              <div class="flex flex-row w-full gap-2">
+                <div class="flex flex-col gap-3 w-full">
                   <label for="fechaTarjeta">Fecha de validez</label>
                   <p-datepicker
                     id="fechaTarjeta"
@@ -163,7 +225,7 @@ import { PasswordModule } from 'primeng/password';
                   />
                 </div>
 
-                <div class="flex flex-col gap-2 w-1/2">
+                <div class="flex flex-col gap-3">
                   <label for="ccvTarjeta">CVV</label>
                   <p-inputnumber
                     mode="decimal"
@@ -175,7 +237,7 @@ import { PasswordModule } from 'primeng/password';
                 </div>
               </div>
 
-              <div class="flex gap-5">
+              <div class="flex gap-5 mt-6">
                 <p-button
                   label="Pagar"
                   raised
@@ -256,6 +318,10 @@ export class ShortCardComponent {
   TypeCard = TypeCard;
   card!: ShortCard;
 
+  deportes: { name: string; code: string }[] | undefined;
+  centrosDeportivo: { name: string; code: string }[] | undefined;
+  franjasHorarias: { name: string; code: string }[] | undefined;
+
   ngOnInit() {
     this.card = {
       categoria: '',
@@ -265,6 +331,23 @@ export class ShortCardComponent {
       hora: '',
       monitor: undefined,
     };
+
+    this.deportes = [
+      { name: 'Fútbol', code: 'FUT' },
+      { name: 'Baloncesto', code: 'BAL' },
+      { name: 'Natación', code: 'NAT' },
+    ];
+
+    this.centrosDeportivo = [
+      { name: 'Centro Deportivo Olímpico', code: 'A' },
+      { name: 'Club Deportivo El Lago', code: 'B' },
+      { name: 'Complejo Deportivo Sierra Verde', code: 'C' },
+    ];
+
+    this.franjasHorarias = [
+      { name: 'Mañana', code: 'MAN' },
+      { name: 'Tarde', code: 'TAR' },
+    ];
   }
 
   visibleCancelar: boolean = false;
@@ -295,4 +378,13 @@ export class ShortCardComponent {
   showDialogNuevo() {
     this.visibleNuevo = true;
   }
+
+  datos = {
+    nombrePrograma: '',
+    fechaInicio: null,
+    diasEntreno: null,
+    deporte: null,
+    centroDeportivo: null,
+    franjaHoraria: null,
+  };
 }

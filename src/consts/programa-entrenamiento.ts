@@ -442,7 +442,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   },
   {
     id: 5,
-    titulo: 'NUEVO',
+    titulo: '',
     precio: 0,
     entrenadorNombre: '',
     entrenadorFoto: '',
