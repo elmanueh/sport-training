@@ -41,11 +41,7 @@ import { DatePicker } from 'primeng/datepicker';
             <p-button
               label="Aceptar"
               raised
-              (click)="
-                visiblePagar = false;
-                programaEntrenamiento.estado =
-                  ProgramaEntrenamientoEstado.PAGADO
-              "
+              (click)="visiblePagar = false"
             ></p-button>
             <p-button
               label="Rechazar"
@@ -185,12 +181,12 @@ import { DatePicker } from 'primeng/datepicker';
             ><p-button (click)="showDialogCancelar()" label="Cancelar" raised
           /></a>
           <p-dialog
+            header="Cancelar programa"
             [(visible)]="visibleCancelar"
-            [closable]="false"
             [modal]="true"
             [style]="{ width: '30rem' }"
           >
-            <div class="flex flex-col items-center p-5">
+            <div class="flex flex-col items-center mx-8">
               <p class="font-bold text-2xl mb-3 text-center">
                 ¿Estás seguro que deseas cancelar el programa deportivo?
               </p>
