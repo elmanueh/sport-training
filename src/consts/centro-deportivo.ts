@@ -152,7 +152,7 @@ export const centrosDeportivos: CentroDeportivo[] = [
         descripcion: 'Zona de escalada en roca para adultos y niños.',
         categoria: 'Escalada',
         imagen:
-          'https://www.indalchess.com/tienda/images/PARQUE_INFANTIL_ESCALADA_MADERA_CUERDAS_280-d5.jpg',
+          'https://media.traveler.es/photos/61376cbebf63e581e0101101/master/pass/144022.jpg',
         valoracion: 4,
       },
       {

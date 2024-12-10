@@ -135,7 +135,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Carlos Pérez',
         categoria: 'Actividad',
         imagen:
-          'https://www.futbolgestion.com/wp-content/uploads/2021/07/tecnica-regate.jpg',
+          'https://cdn.resfu.com/media/img_news/un-jugador-trata-de-marcharse-de-otro-con-un-regate--en-un-partido-de-la-liga-bbva--efe.jpg',
         valoracion: 5,
       },
       {
@@ -148,7 +148,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Ana Gómez',
         categoria: 'Actividad',
         imagen:
-          'https://www.cosasdepadel.com/blog/wp-content/uploads/2021/06/futbol.jpg',
+          'https://aprendeentrenando.com/wp-content/uploads/2021/06/Calentamiento_de_tiro_a_puerta-1024x682.jpg',
         valoracion: 4,
       },
       {
@@ -161,7 +161,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Juan Díaz',
         categoria: 'Actividad',
         imagen:
-          'https://www.jornada.com.mx/ultimas/2021/07/29/futbol-12115.html',
+          'https://celebreak.com/wp-content/uploads/2023/06/ruedas-de-pases-de-futbol-incluyelas-en-tus-entrenamientos.jpg',
         valoracion: 5,
       },
       {
@@ -173,7 +173,8 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '9:00 AM',
         monitor: 'Sergio Martínez',
         categoria: 'Actividad',
-        imagen: 'https://www.sport.es/labaro/media/defensa.jpg',
+        imagen:
+          'https://cdn0.uncomo.com/es/posts/0/4/4/como_entrenar_a_un_defensa_40440_orig.jpg',
         valoracion: 4,
       },
       {
@@ -184,7 +185,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '6:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.elmundo.es/elmundo/imagenes/2020/12/18/1608263130986.jpg',
+          'https://www.opsa.es/wp-content/uploads/2023/06/LA_HOYETA_ALGODONALES1.jpg',
         valoracion: 5,
       },
       {
@@ -195,7 +196,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '8:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://img.abc.es/20181030/abc01cbb72f249ae9970dfc611b71a70.jpg',
+          'https://fut7.pt/wp-content/uploads/2020/11/WhatsApp-Image-2022-05-06-at-09.36.51-1024x576.jpeg',
         valoracion: 4,
       },
       {
@@ -207,7 +208,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '10:00 AM',
         categoria: 'Instalación',
         imagen:
-          'https://www.elnacional.cat/es/futbol/futbol-europeo-2023-campeon_175829_102.html',
+          'https://www.opsa.es/wp-content/uploads/2023/06/LA_HOYETA_ALGODONALES1.jpg',
         valoracion: 5,
       },
       {
@@ -219,7 +220,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '7:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://upload.wikimedia.org/wikipedia/commons/4/4d/Futbol_sala.jpg',
+          'https://deportes.ugr.es/sites/centros/cad/public/imagenes/parrafo/ficha-imagen/2019-09/DSC_0302_opt.jpg',
         valoracion: 5,
       },
     ],
@@ -244,7 +245,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Juan Pérez',
         categoria: 'Actividad',
         imagen:
-          'https://www.elsupernaranja.com/wp-content/uploads/2021/11/tiro-exterior.jpg',
+          'https://coachlorenzo.com/wp-content/uploads/2021/08/La-mecanica-de-tiro-en-baloncesto-Blog-Coach-Lorenzo.jpeg',
         valoracion: 5,
       },
       {
@@ -256,7 +257,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Ana Gómez',
         categoria: 'Actividad',
         imagen:
-          'https://www.basket4all.com/wp-content/uploads/2021/02/defensa.jpg',
+          'https://www.clubulb.es/wp-content/uploads/sites/70/2020/04/20200424_201921.jpg',
         valoracion: 4,
       },
       {
@@ -269,7 +270,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Carlos Díaz',
         categoria: 'Actividad',
         imagen:
-          'https://baloncesto-training.com/wp-content/uploads/2021/12/pase.jpg',
+          'https://www.fbcv.es/blog/wp-content/uploads/2022/12/IMG_0202.jpg',
         valoracion: 5,
       },
       {
@@ -282,7 +283,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Pablo Rodríguez',
         categoria: 'Actividad',
         imagen:
-          'https://www.basket4all.com/wp-content/uploads/2021/04/rebote.jpg',
+          'https://cdn.shopify.com/s/files/1/0752/5249/8730/articles/untitled-2240--900px-1687525541039.png',
         valoracion: 4,
       },
       {
@@ -293,7 +294,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '4:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://img.freepik.com/free-photo/empty-basketball-court_1150-848.jpg',
+          'https://static.elnortedecastilla.es/www/multimedia/202107/16/media/cancha-cuellar.jpg',
         valoracion: 5,
       },
       {
@@ -304,7 +305,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '7:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.basketballplayer.com/wp-content/uploads/2021/10/3x3-basketball.jpg',
+          'https://static.elnortedecastilla.es/www/multimedia/202107/16/media/cancha-cuellar.jpg',
         valoracion: 4,
       },
       {
@@ -315,7 +316,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '10:00 AM',
         categoria: 'Instalación',
         imagen:
-          'https://www.basketballplayer.com/wp-content/uploads/2022/04/pista-cubierta.jpg',
+          'https://floors-supreme.es/wp-content/uploads/2016/07/Dimensiones-oficiales-pista-baloncesto-medidas-cancha-baloncesto-Supreme-Floors.jpg',
         valoracion: 5,
       },
       {
@@ -327,7 +328,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '5:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.freepik.com/free-photo/basketball-court_1150-848.jpg',
+          'https://urbancolex.com/wp-content/uploads/2019/03/cancha-de-baloncesto-1024x576.jpg',
         valoracion: 4,
       },
     ],
@@ -353,7 +354,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Roberto García',
         categoria: 'Actividad',
         imagen:
-          'https://www.volleyballs.com/wp-content/uploads/2021/07/bloqueo.jpg',
+          'https://ninoversace.com/wp-content/uploads/El-bloqueo-voleibol.jpeg',
         valoracion: 5,
       },
       {
@@ -366,7 +367,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         monitor: 'Laura Díaz',
         categoria: 'Actividad',
         imagen:
-          'https://www.sportingnews.com/wp-content/uploads/2020/10/saque.jpg',
+          'https://aboutespanol.com/thmb/jjhzRD_qR0t_2AnjaXvOfMp3Az0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1198640037-dc3c1637127c48b9b78947b50dc2043d.jpg',
         valoracion: 4,
       },
       {
@@ -378,7 +379,8 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '10:00 AM',
         monitor: 'Martín Fernández',
         categoria: 'Actividad',
-        imagen: 'https://volley.info/wp-content/uploads/2021/03/recepcion.jpg',
+        imagen:
+          'https://www.voleiboltotal.com/wp-content/uploads/2024/02/consejos-para-mejorar-tu-defensa-y-recepcion-en-el-voleibol.jpg',
         valoracion: 5,
       },
       {
@@ -389,7 +391,8 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '2:00 PM',
         monitor: 'María Rodríguez',
         categoria: 'Actividad',
-        imagen: 'https://volley.com/wp-content/uploads/2021/08/remates.jpg',
+        imagen:
+          'https://www.dicaseducacaofisica.info/wp-content/uploads/2022/10/cortada-voleibol-hiperextensao.webp',
         valoracion: 4,
       },
       {
@@ -400,7 +403,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '2:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.sportland.com/wp-content/uploads/2021/10/cancha-voley.jpg',
+          'https://i0.wp.com/zsfloortech.com/wp-content/uploads/2022/12/cancha-de-voleibol-cubierta.jpg',
         valoracion: 5,
       },
       {
@@ -412,7 +415,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '7:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.volleyfun.com/wp-content/uploads/2021/07/cancha-voley-exterior.jpg',
+          'https://image.made-in-china.com/226f3j00IOKVGTAdlNrD/Cancha-de-Voleibol-exterior-Pintura-s-lice-PU-material-para-la-cancha-deportiva-Suelo.webp',
         valoracion: 4,
       },
       {
@@ -424,7 +427,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '4:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.fivb.com/wp-content/uploads/2020/07/cancha-voley-arenas.jpg',
+          'https://i.pinimg.com/originals/86/b7/2c/86b72c99602acc8ac7c05e46949f3a92.png',
         valoracion: 5,
       },
       {
@@ -435,7 +438,7 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
         hora: '3:00 PM',
         categoria: 'Instalación',
         imagen:
-          'https://www.sportingnews.com/wp-content/uploads/2020/10/playa-voley.jpg',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ4z_VsyyfABjQYQ4Z8E6FoTrlJvDIxSVE0A&s',
         valoracion: 4,
       },
     ],
