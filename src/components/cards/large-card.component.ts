@@ -17,12 +17,14 @@ import { FormsModule } from '@angular/forms';
   imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
   template: `
     <section class="flex w-3/5 h-48 rounded-xl p-5 shadow-xl bg-primary-800">
-      <img
-        class="rounded-xl"
-        [src]="card.imagen"
-        alt="Imagen acerca de {{ card.titulo }}"
-        width="300rem"
-      />
+      <div class="flex w-56">
+        <img
+          class="rounded-xl"
+          [src]="card.imagen"
+          alt="Imagen acerca de {{ card.titulo }}"
+          width="rounded-xl object-cover h-full w-full"
+        />
+      </div>
       <div class="flex flex-col pl-3 w-full">
         <div class="flex">
           <p class="font-bold text-2xl m-0 w-full">{{ card.titulo }}</p>
