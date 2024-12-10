@@ -7,19 +7,32 @@ import {
 } from '../types/centro-deportivo';
 import { LargeCardComponent } from '../components/cards/large-card.component';
 import { TypeCard } from '../types/card';
+import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'instalaciones-page',
   standalone: true,
-  imports: [PaginatorModule, LargeCardComponent],
+  imports: [PaginatorModule, LargeCardComponent, ButtonModule, RouterModule],
   template: `
     <div class="flex flex-col">
-      <p class="title-page text-center">Instalaciones Deportivas</p>
-      <p class="subtitle-page text-center">{{ centroDeportivo?.titulo }}</p>
+      <div class="flex justify-between">
+        <div class="flex flex-col text-center justify-start pt-12 w-2/12">
+          <a routerLink="/centros-deportivos">
+            <p-button label="Volver atras" raised></p-button>
+          </a>
+        </div>
+
+        <div class="flex flex-col text-center">
+          <p class="title-page">Instalaciones Deportivas</p>
+          <p class="subtitle-page">{{ centroDeportivo?.titulo }}</p>
+        </div>
+
+        <div class="w-2/12"></div>
+      </div>
 
       <div class="flex flex-col gap-5">
-        @for(i of instalaciones.slice(first, first + rows); track i.id)
-        {
+        @for(i of instalaciones.slice(first, first + rows); track i.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="i"
