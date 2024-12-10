@@ -28,9 +28,10 @@ import { Toast } from 'primeng/toast';
           <a routerLink="/mis-programas">
             <p-button label="Volver atrás" raised></p-button>
           </a>
-          <label class="pt-4 text-2xl"> {{ programaTitulo }} </label>
+          <label class="pt-4 text-2xl"> {{ programa.titulo }} </label>
           <label class="text-xl font-bold"
-            >PRECIO: <span class="text-primary"> 50€</span></label
+            >PRECIO:
+            <span class="text-primary"> {{ programa.precio }}€</span></label
           >
         </div>
         <h1 class="title-page text-center">Valora tu experiencia</h1>
@@ -39,11 +40,11 @@ import { Toast } from 'primeng/toast';
           <div class="flex justify-center pb-2">
             <img
               class="rounded-xl w-20"
-              [src]="entrenador"
+              [src]="programa.entrenadorFoto"
               alt="centro-deportivo-1"
             />
           </div>
-          <p>Pablo Peris Solano</p>
+          <p>{{ programa.entrenadorNombre }}</p>
         </div>
       </div>
 
@@ -95,23 +96,19 @@ import { Toast } from 'primeng/toast';
 export class ValorarPage {
   instalaciones: Reserva[] = [];
   actividades: Reserva[] = [];
-  programaTitulo = '';
+  programa: any;
 
   @Input() set id(id: any) {
+    this.programa = programaEntrenamiento[id - 1];
     this.instalaciones =
-      programaEntrenamiento
-        .find((cd) => cd.id == id)
-        ?.reservas.filter((reserva) => reserva.categoria === 'Instalación') ||
-      [];
+      this.programa.reservas.filter(
+        (reserva: Reserva) => reserva.categoria === 'Instalación'
+      ) || [];
     this.actividades =
-      programaEntrenamiento
-        .find((cd) => cd.id == id)
-        ?.reservas.filter((reserva) => reserva.categoria === 'Actividad') || [];
-    this.programaTitulo =
-      programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
+      this.programa.reservas.filter(
+        (reserva: Reserva) => reserva.categoria === 'Actividad'
+      ) || [];
   }
-  entrenador: string =
-    'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1';
 
   constructor(private messageService: MessageService) {}
   show() {

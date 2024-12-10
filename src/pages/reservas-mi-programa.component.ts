@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
-import { Reserva } from '@/types/programa-entrenamiento';
+import { ProgramaEntrenamiento, Reserva } from '@/types/programa-entrenamiento';
 import { TypeCard } from '@/types/card';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
 import { LargeCardComponent } from '@/components/cards/large-card.component';
@@ -18,9 +18,10 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
           <a routerLink="/mis-programas">
             <p-button label="Volver atras" raised></p-button>
           </a>
-          <label class="pt-4 text-2xl"> {{ programaTitulo }} </label>
+          <label class="pt-4 text-2xl"> {{ programa.titulo }} </label>
           <label class="text-xl font-bold"
-            >PRECIO: <span class="text-primary"> 50€</span></label
+            >PRECIO:
+            <span class="text-primary"> {{ programa.precio }}€</span></label
           >
         </div>
         <h1 class="title-page text-center">Visualiza la Planificación</h1>
@@ -29,15 +30,15 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
           <div class="flex justify-center pb-2">
             <img
               class="rounded-xl w-20"
-              [src]="entrenador"
+              [src]= "programa.entrenadorFoto"
               alt="centro-deportivo-1"
             />
           </div>
-          <p>Pablo Peris Solano</p>
+          <p>{{ programa.entrenadorNombre }}</p>
         </div>
       </div>
       <div class="flex flex-col gap-5">
-        @for(reserva of reservas.slice(first, first + rows); track reserva.id) {
+        @for(reserva of programa.reservas.slice(first, first + rows); track reserva.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="reserva"
@@ -51,7 +52,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
           (onPageChange)="onPageChange($event)"
           [first]="first"
           [rows]="rows"
-          [totalRecords]="reservas.length"
+          [totalRecords]="programa.reservas.length"
           [rowsPerPageOptions]="[3, 5, 10]"
         />
       </div>
@@ -59,18 +60,12 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
   `,
 })
 export class ReservasMiProgramaPage {
-  reservas: Reserva[] = [];
-  programaTitulo = '';
   typeCard = TypeCard.StarsButton;
+  programa: any;
 
   @Input() set id(id: any) {
-    this.reservas =
-      programaEntrenamiento.find((cd) => cd.id == id)?.reservas || [];
-    this.programaTitulo =
-      programaEntrenamiento.find((cd) => cd.id == id)?.titulo || '';
+    this.programa = programaEntrenamiento[id-1];
   }
-  entrenador: string =
-    'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1';
 
   first: number = 0;
   rows: number = 3;

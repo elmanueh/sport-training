@@ -11,6 +11,9 @@ export enum ProgramaEntrenamientoEstado {
 export interface ProgramaEntrenamiento {
   id: number;
   titulo: string;
+  precio: number;
+  entrenadorNombre: string;
+  entrenadorFoto: string;
   estado: ProgramaEntrenamientoEstado;
   imagen: string;
   reservas: Reserva[];

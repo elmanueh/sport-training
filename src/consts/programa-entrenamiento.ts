@@ -7,6 +7,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 1,
     titulo: 'Potencia el Saque',
+    precio: 40,
+    entrenadorNombre: 'Pablo Peris Solano',
+    entrenadorFoto:
+      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
     estado: ProgramaEntrenamientoEstado.FINALIZADO,
     imagen:
       'https://media.brainly.com.br/image/rs:fill/w:640/q:75/plain/https://pt-static.z-dn.net/files/d0b/ef3056a1ee53eb3d4a11687f0019559f.jpg',
@@ -114,6 +118,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 2,
     titulo: 'Futbol',
+    precio: 50,
+    entrenadorNombre: 'Pablo Peris Solano',
+    entrenadorFoto:
+      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
     estado: ProgramaEntrenamientoEstado.FINALIZADO,
     imagen:
       'https://blog.cognifit.com/wp-content/uploads/2019/10/futbol-1-1200x766.jpg',
@@ -219,6 +227,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 3,
     titulo: 'Baloncesto',
+    precio: 50,
+    entrenadorNombre: 'Pablo Peris Solano',
+    entrenadorFoto:
+      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
     estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://www.idsports.es/blogadmin/uploads/resize/3_1714655611-pexels-markusspiske-1752757.jpg',
@@ -323,6 +335,10 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 4,
     titulo: 'Voleibol',
+    precio: 50,
+    entrenadorNombre: 'Pablo Peris Solano',
+    entrenadorFoto:
+      'https://img.a.transfermarkt.technology/portrait/header/20973-1696963165.jpg?lm=1',
     estado: ProgramaEntrenamientoEstado.PENDIENTE,
     imagen:
       'https://okdiario.com/img/2019/11/18/donde-se-invento-el-voley-655x368.jpg',
@@ -427,8 +443,11 @@ export const programaEntrenamiento: ProgramaEntrenamiento[] = [
   {
     id: 5,
     titulo: 'NUEVO',
+    precio: 0,
+    entrenadorNombre: '',
+    entrenadorFoto: '',
     estado: ProgramaEntrenamientoEstado.NUEVO,
-    imagen: "",
+    imagen: '',
     reservas: [],
   },
 ];
