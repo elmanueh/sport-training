@@ -10,6 +10,9 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { Dialog } from 'primeng/dialog';
 import { DatePicker } from 'primeng/datepicker';
+import { InputNumber } from 'primeng/inputnumber';
+import { CommonModule } from '@angular/common';
+import { PasswordModule } from 'primeng/password';
 
 @Component({
   selector: 'short-card',
@@ -21,6 +24,9 @@ import { DatePicker } from 'primeng/datepicker';
     FormsModule,
     Dialog,
     DatePicker,
+    InputNumber,
+    PasswordModule,
+    CommonModule,
   ],
   template: `
     @if (programaEntrenamiento.estado == ProgramaEntrenamientoEstado.NUEVO) {
@@ -84,15 +90,15 @@ import { DatePicker } from 'primeng/datepicker';
             [style]="{ width: '25rem' }"
             header="Modificar fecha"
           >
-            <div class="flex flex-col items-center h-96">
+            <div class="flex flex-col items-center h-100">
               <p-datepicker
                 class="max-w-full"
                 [(ngModel)]="date"
                 [inline]="true"
               />
 
-              <p class="mt-4">Nuevo precio: 20€</p>
-              <div class="flex gap-5 mt-4">
+              <p class="mt-2 text-lg">Nuevo precio: 20€</p>
+              <div class="flex gap-5 mt-2">
                 <p-button
                   label="Aceptar"
                   raised
@@ -108,6 +114,7 @@ import { DatePicker } from 'primeng/datepicker';
                   (click)="visibleFecha = false"
                 ></p-button>
               </div>
+              <p class="mt-2">Solo puedes modificarla una vez.</p>
             </div>
           </p-dialog>
         </div>
@@ -122,37 +129,50 @@ import { DatePicker } from 'primeng/datepicker';
             [modal]="true"
             [style]="{ width: '25rem' }"
           >
-            <div class="flex flex-col gap-5 items-center">
-              <div>
-                <label for="@Next">Nombre en la tarjeta</label>
-                <input type="text" pInputText [(ngModel)]="datosPagos.nombre" />
-              </div>
-
-              <div>
-                <label for="@Next">Número de tarjeta</label>
-                <input type="text" pInputText [(ngModel)]="datosPagos.numero" />
-              </div>
-
-              <div>
-                <label for="@Next">Fecha de validación</label>
+            <div class="flex flex-col gap-5 items-center text-base">
+              <div class="flex flex-col w-72 gap-2">
+                <label for="nombreTarjeta">Nombre en la tarjeta</label>
                 <input
                   type="text"
-                  pInputText
-                  placeholder="MM/AA"
-                  [(ngModel)]="datosPagos.fechaValidez"
+                  id="nombreTarjeta"
+                  [(ngModel)]="datosPagos.nombre"
+                  class="h-10"
                 />
               </div>
 
-              <div>
-                <label for="@Next">Código de seguridad (CVV)</label>
-                <input
-                  type="password"
-                  pInputText
-                  [(ngModel)]="datosPagos.numeroSecreto"
+              <div class="flex flex-col w-72 gap-2">
+                <label for="numeroTarjeta">Número de la tarjeta</label>
+                <p-inputnumber
+                  mode="decimal"
+                  [useGrouping]="false"
+                  id="numeroTarjeta"
+                  [(ngModel)]="datosPagos.numero"
                 />
               </div>
+              <div class="flex flex-row w-72 gap-2">
+                <div class="flex flex-col gap-2 w-1/2">
+                  <label for="fechaTarjeta">Fecha de validez</label>
+                  <p-datepicker
+                    id="fechaTarjeta"
+                    [(ngModel)]="datosPagos.fechaValidez"
+                    view="month"
+                    dateFormat="mm/yy"
+                  />
+                </div>
 
-              <div class="flex gap-5 mt-4">
+                <div class="flex flex-col gap-2 w-1/2">
+                  <label for="ccvTarjeta">CVV</label>
+                  <p-inputnumber
+                    mode="decimal"
+                    [useGrouping]="false"
+                    id="ccvTarjeta"
+                    [(ngModel)]="datosPagos.numeroSecreto"
+                    max="999"
+                  />
+                </div>
+              </div>
+
+              <div class="flex gap-5">
                 <p-button
                   label="Pagar"
                   raised
@@ -190,8 +210,10 @@ import { DatePicker } from 'primeng/datepicker';
               <p class="font-bold text-2xl mb-3 text-center">
                 ¿Estás seguro que deseas cancelar el programa deportivo?
               </p>
-              <p class="mb-2 text-xl">{{ programaEntrenamiento.titulo }}</p>
-              <p class="mb-5">Se devolverá 5€</p>
+              <p class="mb-2 text-base">
+                Programa entrenmiento: {{ programaEntrenamiento.titulo }}
+              </p>
+              <p class="mb-2 text-xl">Se devolverá 5€</p>
               <div class="flex justify-between gap-3">
                 <p-button
                   label="Aceptar"
@@ -249,9 +271,9 @@ export class ShortCardComponent {
 
   datosPagos = {
     nombre: '',
-    numero: '',
+    numero: 0,
     fechaValidez: '',
-    numeroSecreto: '',
+    numeroSecreto: 0,
   };
 
   showDialogCancelar() {
