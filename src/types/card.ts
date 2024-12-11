@@ -4,7 +4,7 @@ import {
   InstalacionDeportiva,
 } from '@/types/centro-deportivo';
 
-export enum TypeCard {
+export enum TypeLargeCard {
   MultipleButton,
   SingleButton,
   StarsButton,
@@ -15,8 +15,7 @@ export interface LargeCard
   extends ActividadDeportiva,
     InstalacionDeportiva,
     Reserva {
-  tipo: TypeCard;
-  page: string;
+  tipo: TypeLargeCard;
 }
 
 export interface ShortCard {}

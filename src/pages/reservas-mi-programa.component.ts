@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { ProgramaEntrenamiento, Reserva } from '@/types/programa-entrenamiento';
-import { TypeCard } from '@/types/card';
+import { TypeLargeCard } from '@/types/card';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
 import { LargeCardComponent } from '@/components/cards/large-card.component';
 import { BackButtonComponent } from '../components/back-button.component';
@@ -35,7 +35,7 @@ import { BackButtonComponent } from '../components/back-button.component';
           <div class="flex justify-center pb-2">
             <img
               class="rounded-xl w-20"
-              [src]= "programa.entrenadorFoto"
+              [src]="programa.entrenadorFoto"
               alt="centro-deportivo-1"
             />
           </div>
@@ -43,7 +43,8 @@ import { BackButtonComponent } from '../components/back-button.component';
         </div>
       </div>
       <div class="flex flex-col gap-5">
-        @for(reserva of programa.reservas.slice(first, first + rows); track reserva.id) {
+        @for(reserva of programa.reservas.slice(first, first + rows); track
+        reserva.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="reserva"
@@ -65,11 +66,11 @@ import { BackButtonComponent } from '../components/back-button.component';
   `,
 })
 export class ReservasMiProgramaPage {
-  typeCard = TypeCard.StarsButton;
+  typeCard = TypeLargeCard.StarsButton;
   programa: any;
 
   @Input() set id(id: any) {
-    this.programa = programaEntrenamiento[id-1];
+    this.programa = programaEntrenamiento[id - 1];
   }
 
   first: number = 0;

@@ -6,7 +6,7 @@ import {
   InstalacionDeportiva,
 } from '../types/centro-deportivo';
 import { LargeCardComponent } from '../components/cards/large-card.component';
-import { TypeCard } from '../types/card';
+import { TypeLargeCard } from '../types/card';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { BackButtonComponent } from '../components/back-button.component';
@@ -62,7 +62,7 @@ import { BackButtonComponent } from '../components/back-button.component';
 export class InstalacionesPage {
   instalaciones: InstalacionDeportiva[] = [];
   centroDeportivo: CentroDeportivo | undefined;
-  typeCard = TypeCard.StarsButton;
+  typeCard = TypeLargeCard.StarsButton;
 
   @Input() set id(id: any) {
     this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);

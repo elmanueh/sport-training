@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
-import { TypeCard } from '@/types/card';
+import { TypeLargeCard } from '@/types/card';
 import { centrosDeportivos } from '@/consts/centro-deportivo';
 import { LargeCardComponent } from '@/components/cards/large-card.component';
 
@@ -13,8 +13,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
       <p class="title-page text-center">Centros Deportivos</p>
 
       <div class="flex flex-col gap-5">
-        @for(cd of centrosDeportivos.slice(first, first + rows); track
-        cd.id) {
+        @for(cd of centrosDeportivos.slice(first, first + rows); track cd.id) {
         <large-card
           [typeCard]="typeCard"
           [data]="cd"
@@ -37,7 +36,7 @@ import { LargeCardComponent } from '@/components/cards/large-card.component';
 })
 export class CentrosDeportivosPage {
   centrosDeportivos = centrosDeportivos;
-  typeCard = TypeCard.MultipleButton;
+  typeCard = TypeLargeCard.MultipleButton;
 
   first: number = 0;
   rows: number = 3;

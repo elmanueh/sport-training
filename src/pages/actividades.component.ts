@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { centrosDeportivos } from '@/consts/centro-deportivo';
-import { TypeCard } from '@/types/card';
+import { TypeLargeCard } from '@/types/card';
 import { ActividadDeportiva, CentroDeportivo } from '@/types/centro-deportivo';
 import { LargeCardComponent } from '@/components/cards/large-card.component';
 import { ButtonModule } from 'primeng/button';
@@ -59,7 +59,7 @@ import { BackButtonComponent } from '../components/back-button.component';
 export class ActividadesPage {
   actividades: ActividadDeportiva[] = [];
   centroDeportivo: CentroDeportivo | undefined;
-  typeCard = TypeCard.StarsButton;
+  typeCard = TypeLargeCard.StarsButton;
 
   @Input() set id(id: any) {
     this.centroDeportivo = centrosDeportivos.find((cd) => cd.id == id);

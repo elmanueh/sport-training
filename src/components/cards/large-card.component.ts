@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { LargeCard, TypeCard } from '@/types/card';
+import { LargeCard, TypeLargeCard } from '@/types/card';
 import {
   ActividadDeportiva,
   CentroDeportivo,
@@ -16,18 +16,17 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [ButtonModule, RouterModule, RatingModule, FormsModule],
   template: `
-    <section class="flex w-3/5 h-48 rounded-xl p-5 shadow-xl bg-primary-800">
-      <div class="flex w-56">
-        <img
-          class="rounded-xl"
-          [src]="card.imagen"
-          alt="Imagen acerca de {{ card.titulo }}"
-          width="rounded-xl object-cover h-full w-full"
-        />
-      </div>
+    <section
+      class="flex w-[80rem] h-44 rounded-lg p-4 shadow-xl bg-surface-900 transition-colors hover:bg-opacity-80 hover:bg-surface-800"
+    >
+      <img
+        class="rounded-lg w-80 object-cover"
+        [src]="card.imagen"
+        alt="Imagen {{ card.titulo }}"
+      />
       <div class="flex flex-col pl-3 w-full">
         <div class="flex">
-          <p class="font-bold text-2xl m-0 w-full">{{ card.titulo }}</p>
+          <p class="font-bold text-2xl w-full">{{ card.titulo }}</p>
           @if (card.tipo != TypeCard.MultipleButton) {
           <p class="m-0 h-full flex content-start">
             <strong>{{ card.categoria }}</strong>
@@ -60,15 +59,14 @@ import { FormsModule } from '@angular/forms';
   `,
 })
 export class LargeCardComponent {
-  @Input({ required: true }) typeCard!: TypeCard;
+  @Input({ required: true }) typeCard!: TypeLargeCard;
   @Input({ required: true }) data!:
     | CentroDeportivo
     | InstalacionDeportiva
     | ActividadDeportiva
     | Reserva;
-  @Input() actualPage: string = '';
 
-  TypeCard = TypeCard;
+  TypeCard = TypeLargeCard;
   card!: LargeCard;
 
   ngOnInit() {
@@ -76,7 +74,6 @@ export class LargeCardComponent {
       categoria: '',
       valoracion: 0,
       tipo: this.typeCard,
-      page: this.actualPage,
       fecha: '',
       hora: '',
       monitor: undefined,
