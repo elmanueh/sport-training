@@ -8,6 +8,7 @@ import { ValorarCardComponent } from '@/components/cards/valorar-card.component'
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
 import { Toast } from 'primeng/toast';
+import { BackButtonComponent } from '../components/back-button.component';
 
 @Component({
   selector: 'valorar-page',
@@ -19,15 +20,14 @@ import { Toast } from 'primeng/toast';
     RouterModule,
     ButtonModule,
     Toast,
+    BackButtonComponent,
   ],
   providers: [MessageService],
   template: `
     <section class="flex flex-col">
       <div class="flex justify-between">
         <div class="flex flex-col justify-center text-center w-2/12">
-          <a routerLink="/mis-programas">
-            <p-button label="Volver atrás" raised></p-button>
-          </a>
+          <back-button [route]="'/mis-programas'" />
           <label class="pt-4 text-2xl"> {{ programa.titulo }} </label>
           <label class="text-xl font-bold"
             >PRECIO:

@@ -6,18 +6,23 @@ import { ProgramaEntrenamiento, Reserva } from '@/types/programa-entrenamiento';
 import { TypeCard } from '@/types/card';
 import { programaEntrenamiento } from '../consts/programa-entrenamiento';
 import { LargeCardComponent } from '@/components/cards/large-card.component';
+import { BackButtonComponent } from '../components/back-button.component';
 
 @Component({
   selector: 'reservas-page',
   standalone: true,
-  imports: [PaginatorModule, ButtonModule, LargeCardComponent, RouterModule],
+  imports: [
+    PaginatorModule,
+    ButtonModule,
+    LargeCardComponent,
+    RouterModule,
+    BackButtonComponent,
+  ],
   template: `
     <div class="flex flex-col">
       <div class="flex justify-between">
         <div class="flex flex-col text-center justify-start pt-12 w-2/12">
-          <a routerLink="/mis-programas">
-            <p-button label="Volver atras" raised></p-button>
-          </a>
+          <back-button [route]="'/mis-programas'" />
           <label class="pt-4 text-2xl"> {{ programa.titulo }} </label>
           <label class="text-xl font-bold"
             >PRECIO:

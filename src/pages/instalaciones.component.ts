@@ -9,19 +9,25 @@ import { LargeCardComponent } from '../components/cards/large-card.component';
 import { TypeCard } from '../types/card';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
+import { BackButtonComponent } from '../components/back-button.component';
 
 @Component({
   selector: 'instalaciones-page',
   standalone: true,
-  imports: [PaginatorModule, LargeCardComponent, ButtonModule, RouterModule],
+  imports: [
+    PaginatorModule,
+    LargeCardComponent,
+    ButtonModule,
+    RouterModule,
+    BackButtonComponent,
+  ],
   template: `
     <div class="flex flex-col">
       <div class="flex justify-between">
-        <div class="flex flex-col text-center justify-start pt-12 w-2/12">
-          <a routerLink="/centros-deportivos">
-            <p-button label="Volver atras" raised></p-button>
-          </a>
-        </div>
+        <back-button
+          [route]="'/centros-deportivos'"
+          class="flex w-2/12 justify-center items-center"
+        />
 
         <div class="flex flex-col text-center">
           <p class="title-page">Instalaciones Deportivas</p>
