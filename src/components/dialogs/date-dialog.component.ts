@@ -16,7 +16,7 @@ import { Dialog } from 'primeng/dialog';
     <p-dialog
       [(visible)]="visible"
       [draggable]="false"
-      [style]="{ width: '25rem', height: '33rem' }"
+      [style]="{ width: '25rem', height: '35rem' }"
       header="Decide cuándo comenzar"
       [modal]="true"
       (onHide)="status.emit(false)"

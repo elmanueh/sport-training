@@ -11,12 +11,9 @@ import { ShortCardComponent } from '@/components/cards/short-card.component';
     <section class="flex flex-col">
       <p class="title-page text-center pb-5">Mis Programas</p>
 
-      <div class="grid grid-cols-4 gap-y-20 mx-20">
+      <div class="grid grid-cols-3 px-56 gap-y-14">
         @for(pe of programasEntrenamiento; track pe.id) {
-        <short-card
-          class="flex justify-center"
-          [programaEntrenamiento]="pe"
-        ></short-card>
+        <short-card [programaEntrenamiento]="pe" class="flex justify-center" />
         }
       </div>
     </section>
