@@ -50,7 +50,7 @@ import { RouterModule } from '@angular/router';
             />
             <p-avatar image="https://github.com/elmanueh.png" shape="circle" />
             <div class="flex items-center gap-5">
-              <a [routerLink]="['/']"> Únete a Nosotros </a>
+              <a [routerLink]="['/register']"> Únete a Nosotros </a>
               <a [routerLink]="['/login']">Iniciar Sesión</a>
               <a [routerLink]="['/']"> Ayuda </a>
               <a [routerLink]="['/']"> Idioma </a>

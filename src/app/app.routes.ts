@@ -7,6 +7,7 @@ import { LoginPage } from '@/pages/login.component';
 import { ReservasMiProgramaPage } from '@/pages/reservas-mi-programa.component';
 import { ActividadesPage } from '@/pages/actividades.component';
 import { ValorarPage } from '@/pages/valorar.component';
+import { RegisterPage } from '@/pages/register.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginPage,
+  },
+  {
+    path: 'register',
+    component: RegisterPage,
   },
 ];
