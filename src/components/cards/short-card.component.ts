@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DateDialogComponent } from '@components/dialogs/date-dialog.component';
 import { PaymentDialogComponent } from '@components/dialogs/payment-dialog.component';
+import { Reserva } from '@/types/programa-entrenamiento';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
@@ -36,7 +37,32 @@ import { Toast } from 'primeng/toast';
   providers: [MessageService],
   template: `
     <p-toast />
-    @if (programaEntrenamiento.estado == ProgramaEntrenamientoEstado.NUEVO) {
+    @if (reserva) {
+    <div
+      class="flex flex-col gap-4 p-4 card rounded-xl shadow-xl bg-surface-900 transition-all hover:bg-surface-800 hover:bg-opacity-80"
+    >
+      <div class="font-bold text-2xl h-8">
+        {{ reserva.titulo }}
+      </div>
+      <div class="flex justify-end">
+        <p-rating [(ngModel)]="reserva.valoracion" />
+      </div>
+      <img
+        class="rounded-xl flex w-full h-44"
+        [src]="reserva.imagen"
+        height="250vh"
+      />
+      <textarea
+        rows="5"
+        cols="5"
+        pTextarea
+        [(ngModel)]="reserva.comentario"
+        placeholder="Comentario"
+        class="surface-400 text-900 w-full h-20 rounded-xl justify-end"
+      ></textarea>
+    </div>
+    } @else if (programaEntrenamiento.estado ==
+    ProgramaEntrenamientoEstado.NUEVO) {
     <div
       class="flex flex-col card items-center justify-center rounded-xl shadow-xl opacity-25 transition-opacity bg-surface-900 hover:opacity-100"
     >
@@ -137,8 +163,9 @@ import { Toast } from 'primeng/toast';
   `,
 })
 export class ShortCardComponent implements OnInit {
-  @Input({ required: true }) programaEntrenamiento!: ProgramaEntrenamiento;
+  @Input({ required: false }) programaEntrenamiento!: ProgramaEntrenamiento;
   ProgramaEntrenamientoEstado = ProgramaEntrenamientoEstado;
+  @Input({ required: false }) reserva!: Reserva;
   card!: ShortCard;
 
   ngOnInit() {

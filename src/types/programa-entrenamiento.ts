@@ -29,4 +29,5 @@ export interface Reserva {
   categoria: string;
   imagen: string;
   valoracion: number;
+  comentario?: string;
 }

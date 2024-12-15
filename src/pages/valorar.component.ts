@@ -4,27 +4,27 @@ import { PaginatorModule } from 'primeng/paginator';
 import { CarouselModule } from 'primeng/carousel';
 import { Reserva } from '@/types/programa-entrenamiento';
 import { programaEntrenamiento } from '@/consts/programa-entrenamiento';
-import { ValorarCardComponent } from '@/components/cards/valorar-card.component';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
 import { Toast } from 'primeng/toast';
 import { BackButtonComponent } from '../components/back-button.component';
+import { ShortCardComponent } from '@/components/cards/short-card.component';
 
 @Component({
   selector: 'valorar-page',
   standalone: true,
   imports: [
-    ValorarCardComponent,
     PaginatorModule,
     CarouselModule,
     RouterModule,
     ButtonModule,
     Toast,
     BackButtonComponent,
+    ShortCardComponent,
   ],
   providers: [MessageService],
   template: `
-    <section class="flex flex-col">
+    <section class="flex flex-col gap-10">
       <div class="flex justify-between">
         <div class="flex flex-col justify-center text-center w-2/12">
           <back-button [route]="'/mis-programas'" />
@@ -48,41 +48,33 @@ import { BackButtonComponent } from '../components/back-button.component';
         </div>
       </div>
 
-      <div class="flex flex-col items-center">
-        <div class="flex flex-col pb-5 w-9/12">
-          <div class="flex pb-3">
-            <p class="font-italic text-xl font-bold">Actividades</p>
-          </div>
-          <div>
-            <p-carousel
-              [value]="actividades"
-              [numVisible]="3"
-              [numScroll]="3"
-              [circular]="false"
-            >
-              <ng-template pTemplate="item" let-actividad>
-                <valorar-card [reserva]="actividad" />
-              </ng-template>
-            </p-carousel>
-          </div>
+      <div class="flex flex-col items-center gap-5">
+        <div class="flex flex-col w-9/12">
+          <p class="font-italic text-xl font-bold flex pb-3">Actividades</p>
+          <p-carousel
+            [value]="actividades"
+            [numVisible]="3"
+            [numScroll]="3"
+            [circular]="false"
+          >
+            <ng-template pTemplate="item" let-actividad>
+              <short-card [reserva]="actividad" class="flex justify-center" />
+            </ng-template>
+          </p-carousel>
         </div>
 
-        <div class="flex flex-col pb-5 w-9/12">
-          <div class="flex pb-3">
-            <p class="font-italic text-xl font-bold">Instalaciones</p>
-          </div>
-          <div>
-            <p-carousel
-              [value]="instalaciones"
-              [numVisible]="3"
-              [numScroll]="3"
-              [circular]="false"
-            >
-              <ng-template pTemplate="item" let-instalacion>
-                <valorar-card [reserva]="instalacion" />
-              </ng-template>
-            </p-carousel>
-          </div>
+        <div class="flex flex-col w-9/12">
+          <p class="font-italic text-xl font-bold flex pb-3">Instalaciones</p>
+          <p-carousel
+            [value]="instalaciones"
+            [numVisible]="3"
+            [numScroll]="3"
+            [circular]="false"
+          >
+            <ng-template pTemplate="item" let-instalacion>
+              <short-card [reserva]="instalacion" class="flex justify-center" />
+            </ng-template>
+          </p-carousel>
         </div>
 
         <div class="flex justify-end w-9/12">
