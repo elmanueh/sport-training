@@ -1,27 +1,38 @@
 # SportTraining
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Este es un proyecto desarrollado con Angular. A continuación, se describen los pasos necesarios para configurar, compilar y ejecutar el proyecto en tu máquina local.
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-## Code scaffolding
+- **Node.js**: Descárgalo e instálalo desde [Node.js](https://nodejs.org/).
+- **Angular CLI**: Instala la herramienta de línea de comandos de Angular de manera global:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install -g @angular/cli
+```
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona este repositorio en tu máquina local:
 
-## Running unit tests
+```bash
+git clone https://github.com/elmanueh/sporttraining.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navega al directorio del proyecto:
 
-## Running end-to-end tests
+```bash
+cd sporttraining
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Instala las dependencias del proyecto:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Ejecución del Servidor de Desarrollo
+
+Ejecuta `npm start` para iniciar el servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
